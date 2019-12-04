@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://evergreen-david.github.io.git/sitemap.xml
+Host: https://evergreen-david.github.io.git

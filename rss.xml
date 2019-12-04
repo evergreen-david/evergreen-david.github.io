@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 Dec 2019 08:54:19 GMT</lastBuildDate><item><title><![CDATA[package manager로 설치한 프로그램 목록 확인하기2]]></title><description><![CDATA[global로 설치한 package 목록을 확인합니다.2]]></description><link>https://evergreen-david.github.io.git//posts/package-list</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/package-list</guid><pubDate>Mon, 15 Apr 2019 22:40:32 GMT</pubDate><content:encoded>&lt;h1 id=&quot;python&quot;&gt;&lt;a href=&quot;#python&quot; aria-label=&quot;python permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Python&lt;/h1&gt;
+&lt;h4 id=&quot;brew&quot;&gt;&lt;a href=&quot;#brew&quot; aria-label=&quot;brew permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;brew&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;brew list&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;npm&quot;&gt;&lt;a href=&quot;#npm&quot; aria-label=&quot;npm permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;npm&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm list -g --depth=0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Jekyll로 블로그 만들기]]></title><description><![CDATA[Jekyll로 정적 블로그를 만들어 봅니다.]]></description><link>https://evergreen-david.github.io.git//posts/how-to-install-jekyll/</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/how-to-install-jekyll/</guid><pubDate>Sat, 13 Apr 2019 22:40:32 GMT</pubDate><content:encoded>&lt;h1 id=&quot;jekyll로-블로그-만들기&quot;&gt;&lt;a href=&quot;#jekyll%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;jekyll로 블로그 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Jekyll로 블로그 만들기&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://wecode.co.kr&quot;&gt;wecode&lt;/a&gt; 수강생 대상으로 작성한 포스팅입니다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;그 동안 배운 것들을 정리할 블로그를 만들어 보겠습니다. 블로그를 만들려면 어떤 페이지가 필요할까요?&lt;/p&gt;
+&lt;p&gt;바로 이전에 미니 트위터를 만들었는데, 그 것보다는 더 복잡할 것 같다는 느낌이 확실히 드네요!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;블로그 홈(최신 글 모음)&lt;/li&gt;
+&lt;li&gt;카테고리 별로 포스팅 목록을 볼 수 있는 페이지&lt;/li&gt;
+&lt;li&gt;글 쓰는 페이지&lt;/li&gt;
+&lt;li&gt;로그인 페이지&lt;/li&gt;
+&lt;li&gt;등등..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;HTML, CSS, JavaScript로 나만의 블로그를 만들려면 시간이 한참 걸릴 것 같습니다.&lt;/p&gt;
+&lt;p&gt;그래서…! 일일이 개발할 필요 없이 미리 어느 정도 만들어주는 site generator를 쓰려고 합니다.
+여러 generator가 있는데 그 중에 &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; 이라는 것을 사용하겠습니다.
+몇 개의 명령어로, 단 몇 분만에 블로그 설치가 가능합니다.&lt;/p&gt;
+&lt;p&gt;우리는 블로그를 설치하고, 조금 커스터마이징을 거친 후 바로 배포해보겠습니다!
+github를 이용해서 배포할 것이고, github에서 제공하는 도메인을 사용하려고 합니다.&lt;/p&gt;
+&lt;h4 id=&quot;시작하기-전에&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90&quot; aria-label=&quot;시작하기 전에 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시작하기 전에&lt;/h4&gt;
+&lt;p&gt;위에서 나온 새로운 단어 몇 개를 설명드리고 가겠습니다.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;배포&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;배포(deploy)한다.&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;디플로이한다.&lt;/code&gt; 라는 말을 앞으로 자주 하고, 듣게 될 것입니다.&lt;/p&gt;
+&lt;p&gt;배포란, 그동안 개발하던 것을 세상(인터넷상)에 드디어 공개하고 모든 사람들이 접근해서 볼 수 있게 하는 것을 의미합니다.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;도메인&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;도메인은 &lt;code class=&quot;language-text&quot;&gt;wecode.co.kr&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;google.com&lt;/code&gt;과 같은 영문 주소를 의미합니다.
+원래는 110.13.109.111과 같은 숫자로 이루어진 ip주소인데, 사람들이 기억하기 쉽도록 영문주소로 바꿔 사용하고 있습니다.&lt;/p&gt;
+&lt;p&gt;나만의 블로그를 갖고 싶다면 도메인을 구입하고, 직접 ip 주소에 연결하는 과정을 거쳐야 하지만 github에서 Github Pages 라는 서비스를 사용할 예정입니다.
+개인적으로 도메인을 구매했다면 자신만의 도메인을 연결할 수 있습니다.&lt;/p&gt;
+&lt;h4 id=&quot;블로그-설치-순서&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%84%A4%EC%B9%98-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;블로그 설치 순서 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블로그 설치 순서&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Ruby 설치&lt;/li&gt;
+&lt;li&gt;jekyll, bundler 설치&lt;/li&gt;
+&lt;li&gt;블로그 설치&lt;/li&gt;
+&lt;li&gt;내 컴퓨터(로컬환경)에서 블로그 띄우기&lt;/li&gt;
+&lt;li&gt;github.io repo만들기&lt;/li&gt;
+&lt;li&gt;코드 올리기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;1-ruby-설치&quot;&gt;&lt;a href=&quot;#1-ruby-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;1 ruby 설치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Ruby 설치&lt;/h3&gt;
+&lt;p&gt;블로그를 설치하려면 jekyll을 설치해야하고, jekyll을 설치하려면 Ruby를 설치해야 합니다.&lt;/p&gt;
+&lt;p&gt;Ruby는 Python, JavaScript같은 컴퓨터 언어 중 하나입니다. Ruby 지식 없이도 설치 가능하니 걱정마세요!!(저도 잘 모름)&lt;/p&gt;
+&lt;p&gt;Jekyll 을 사용하려면 Ruby 버전 2.3.0 이상이 깔려 있어야 합니다.
+아래의 명령어로 ruby 버전을 확인할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ruby -v&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;mac은 기본적으로 ruby가 깔려있지만 버전이 다를 수도 있으니 잘 확인해주세요.
+window/linux는 깔려있지 않으니 ruby를 설치합시다.&lt;/p&gt;
+&lt;p&gt;설치한 후 ruby -v 으로 제대로 설치했는지 확인해주세요.&lt;/p&gt;
+&lt;h4 id=&quot;참고&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;구글 install ruby를 검색&lt;/li&gt;
+&lt;li&gt;업데이트 시, &lt;a href=&quot;https://stackoverflow.com/questions/38194032/how-to-update-ruby-version-2-0-0-to-the-latest-version-in-mac-osx-yosemite&quot;&gt;https://stackoverflow.com/questions/38194032/how-to-update-ruby-version-2-0-0-to-the-latest-version-in-mac-osx-yosemite&lt;/a&gt;
+첫 번째 답변확인&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;제 ruby 버전입니다. 같을 필요는 없습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ruby -v
+ruby 2.4.2p198 (2017-09-14 revision 59899) [x86_64-darwin18]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;2-jekyll-bundler-설치&quot;&gt;&lt;a href=&quot;#2-jekyll-bundler-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;2 jekyll bundler 설치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. jekyll, bundler 설치&lt;/h3&gt;
+&lt;p&gt;이제 ruby의 package manager인 gem으로 jekyll과 bundler를 설치합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gem install jekyll bundler&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;jekyll 공식문서&lt;/a&gt;를 보고 설치하셔도 됩니다.&lt;/p&gt;
+&lt;h3 id=&quot;3-블로그-설치생성&quot;&gt;&lt;a href=&quot;#3-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%84%A4%EC%B9%98%EC%83%9D%EC%84%B1&quot; aria-label=&quot;3 블로그 설치생성 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 블로그 설치(생성)&lt;/h3&gt;
+&lt;p&gt;블로그를 만들고 싶은 directory에서 아래와 같이 실행합니다.
+저는 myblog라는 이름으로 만들어 주었습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;jekyll new myblog&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;성공하면 현재 위치에 myblog라는 디렉토리가 생성되고, 이 안에 각종 파일이 생성됩니다.
+방금 만든 디렉토리로 가서 파일이 잘 생겼는지 확인해주세요.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cd myblog&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;img src=&quot;/img/190227-3.png&quot; width=&quot;500&quot;/&gt;
+&lt;p&gt;myblog 디렉토리 밑의 파일들은 모두 git에 올라갈 예정입니다.
+그러므로 본인이 앞으로 소스코드를 모아놓을 곳에 생성해주세요.&lt;/p&gt;
+&lt;p&gt;저는 &lt;code class=&quot;language-text&quot;&gt;/Users/AllieKim/Projects&lt;/code&gt; 아래인
+&lt;code class=&quot;language-text&quot;&gt;/Users/AllieKim/Projects/myblog&lt;/code&gt;에 생성했습니다. 앞으로 &lt;code class=&quot;language-text&quot;&gt;/Users/AllieKim/Projects/myblog&lt;/code&gt;를 블로그 루트(root)라고 표현하겠습니다.&lt;/p&gt;
+&lt;h3 id=&quot;4-내-컴퓨터로컬환경에서-블로그-띄우기&quot;&gt;&lt;a href=&quot;#4-%EB%82%B4-%EC%BB%B4%ED%93%A8%ED%84%B0%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%9D%84%EC%9A%B0%EA%B8%B0&quot; aria-label=&quot;4 내 컴퓨터로컬환경에서 블로그 띄우기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. 내 컴퓨터(로컬환경)에서 블로그 띄우기&lt;/h3&gt;
+&lt;p&gt;git에 포스팅을 올려 배포되기 전에, 잘 작성되었는지 미리 확인해야겠죠? 블로그 root에서 아래의 명령어를 실행해주세요.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;bundle exec jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;브라우저를 열고 주소창에 localhost:4000으로 접속해보세요.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;localhost&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;localhost, 로컬, 로컬환경 이라는 단어가 앞으로 많이 등장할 예정입니다. 로컬환경에 대해 잠깐 설명드리겠습니다.&lt;/p&gt;
+&lt;p&gt;웹상에 html, css, js를 작동시켜서 사이트를 보려면 서버가 필요합니다.
+aws, cafe24 등에서 서버를 빌려서 우리의 블로그 파일들을 올리고 어느 누구든지 접근할 수 있게 하는 것을 호스팅이라고 합니다.
+서버를 빌렸으니 렌탈비용을 내야하는데 이런 것을 호스팅 비용이라고 하죠. (참고로 우리는 github의 서버를 통해 호스팅하고, 물론 무료입니다!)&lt;/p&gt;
+&lt;p&gt;그런데 markdown으로 작성된 포스팅이 잘 나오는지 매번 github에 올린 후, 내 사이트에 접속해서 확인하기는 번거롭습니다.
+아니면 블로그 css를 바꾸고 싶은데, 버튼 색 하나 바꾸고 잘 나오는지 확인하려면 github에 올린 후, 사이트에 접속해서 확인을 해야겠죠.&lt;/p&gt;
+&lt;p&gt;번거롭습니다! 그렇다면 내 컴퓨터를 서버로 만들어서 사이트가 잘 나오는지 확인할 수 있습니다.
+내 컴퓨터에서 볼 수 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;로컬환경&lt;/code&gt; 이라고 말합니다.&lt;/p&gt;
+&lt;p&gt;개발할 동안, 내 컴퓨터에서 서버를 띄워서 &lt;code class=&quot;language-text&quot;&gt;localhost:4000&lt;/code&gt;으로 접속하면 html, css, js등을 올리고 잘 작동되는지 확인할 수 있습니다.
+멈추고 싶으면 서버를 실행한 터미널에서 &lt;code class=&quot;language-text&quot;&gt;ctrl c&lt;/code&gt;를 입력해보세요.&lt;/p&gt;
+&lt;h3 id=&quot;5-githubio-repo만들기&quot;&gt;&lt;a href=&quot;#5-githubio-repo%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;5 githubio repo만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5. github.io repo만들기&lt;/h3&gt;
+&lt;p&gt;github에 접속해서 새로운 repository를 만들어 주세요. 아래와 같이 github의 &lt;code class=&quot;language-text&quot;&gt;username&lt;/code&gt; 뒤에 &lt;code class=&quot;language-text&quot;&gt;.github.io&lt;/code&gt; 을 붙여주세요.
+제 github username은 &lt;code class=&quot;language-text&quot;&gt;yeri-kim&lt;/code&gt;이기 때문에 &lt;code class=&quot;language-text&quot;&gt;yeri-kim.github.io&lt;/code&gt; 으로 만들었습니다.
+(username말고 다른 이름을 붙이면 블로그 주소가 길어집니다.)
+&lt;img src=&quot;/media/190227-5.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;yeri-kim.github.io&quot;&gt;yeri-kim.github.io&lt;/a&gt;의 도메인으로 접속할 수 있는 블로그 repository가 생성되었습니다!&lt;/p&gt;
+&lt;h3 id=&quot;6-코드-올리기&quot;&gt;&lt;a href=&quot;#6-%EC%BD%94%EB%93%9C-%EC%98%AC%EB%A6%AC%EA%B8%B0&quot; aria-label=&quot;6 코드 올리기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. 코드 올리기&lt;/h3&gt;
+&lt;p&gt;이제 로컬에 있는 블로그 소스코드를 github에 올리겠습니다.&lt;/p&gt;
+&lt;p&gt;블로그 root에서 git을 세팅합시다. yeri-kim 부분은 각자의 username으로 해주세요.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git init
+git remote add origin https://github.com/yeri-kim/yeri-kim.github.io.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;commit-push-하기&quot;&gt;&lt;a href=&quot;#commit-push-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;commit push 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;commit, push 하기&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git add .
+git commit -m “first commit”
+git push -u origin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;네! 드디어 내 블로그가 세상에 공개되었습니다. 각자 블로그 주소에 접속해서 잘 나왔는지 확인해주세요.&lt;/p&gt;
+&lt;h3 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;reference&lt;/h3&gt;
+&lt;p&gt;codecademy&lt;/p&gt;</content:encoded></item></channel></rss>
