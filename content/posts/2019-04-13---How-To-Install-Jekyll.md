@@ -2,7 +2,7 @@
 title: Jekyll로 블로그 만들기
 date: "2019-04-13T22:40:32.169Z"
 template: "post"
-draft: false
+draft: true
 slug: "/posts/how-to-install-jekyll/"
 category: "jekyll"
 description: "Jekyll로 정적 블로그를 만들어 봅니다."
