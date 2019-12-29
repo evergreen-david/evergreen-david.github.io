@@ -1,73 +1,102 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 29 Dec 2019 07:48:25 GMT</lastBuildDate><item><title><![CDATA[database]]></title><description><![CDATA[database]]></description><link>https://evergreen-david.github.io.git//posts/study-database</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-database</guid><pubDate>Sat, 28 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-my-sql-database-깔끔하게-초기화-하기&quot;&gt;&lt;a href=&quot;#1-my-sql-database-%EA%B9%94%EB%81%94%ED%95%98%EA%B2%8C-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 my sql database 깔끔하게 초기화 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. MY SQL DATABASE 깔끔하게 초기화 하기&lt;/h1&gt;
-&lt;p&gt;my sql &gt; DROP DATABASE [name]
-django &gt; manage.py 있는 루트 디렉토리에서 다음 명령어 실행
-전체 앱의 migrations 디렉토리 안에 makemigrations 결과로 만들어진 0001_initial.py 들을 삭제한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;find . -path &amp;quot;*/migrations/*.py&amp;quot; 
-find . -path &amp;quot;*/migrations/*.py&amp;quot; -not -name &amp;quot;__init__.py&amp;quot; -delete&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;2-my-sql-database-다시-만들기&quot;&gt;&lt;a href=&quot;#2-my-sql-database-%EB%8B%A4%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;2 my sql database 다시 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. MY SQL DATABASE 다시 만들기&lt;/h1&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;create database tesla character &lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; utf8mb4 collate utf8mb4_general_ci&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;show databases; 로 확인&lt;/p&gt;
-&lt;h1 id=&quot;3-tables-다시-만들기&quot;&gt;&lt;a href=&quot;#3-tables-%EB%8B%A4%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;3 tables 다시 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. TABLES 다시 만들기&lt;/h1&gt;
-&lt;p&gt;Django의 클래스 모델기반으로 테이블을 만들어 준다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 29 Dec 2019 10:21:37 GMT</lastBuildDate><item><title><![CDATA[python queryset]]></title><description><![CDATA[python queryset]]></description><link>https://evergreen-david.github.io.git//posts/study-python-queryset</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-python-queryset</guid><pubDate>Sun, 29 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-query-set-이란&quot;&gt;&lt;a href=&quot;#1-query-set-%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;1 query set 이란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. QUERY SET 이란&lt;/h1&gt;
+&lt;p&gt;데이터 베이스에서 읽어온 객체들의 집합이다.
+파이썬 쉘에서 다음과 같이 테이블 자료 조회&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 686px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png&quot;
+    href=&quot;/static/c8d259bd7599eb5f171a28abd70a8221/90c4b/query_set_select_all.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 32.06997084548105%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABRklEQVQY022RbU/CMBSFu60dSxhjbiAkCESN8YUoBGSabQzZZK+Imyb8/39yLCUYSfxwc9q0fe49PcRJMvhphunbEuM0x6z8xngV4dFfoNu7R6tmoKVS6HoD7bYN27bR6XRgmibft2FZFprNJiilIISAPEymWK1jfFZfyPMcZVWh3G6x9H0M+j0QWRIXFcpAFQWyLEPhugccVZKk3yLD/gDObIp1FCIKV/BcF0mawvU83t0G46A9hDIVqqoKgMqYWDN2ODsB3r56cJMUfpzADSME3L7Pp3Pmc1xfX6FhGJBkBQp/TFV20BoHc6DC4QL4B0qeps9I8wLZZoO4KFDudgjjGC+uh97FEDKRoHJrjAPEH/1TJxO6iwBBwANxZhhlBUYfFUZJjrvoHVZ3gsv6OW7qGg/hjJfBAzBFELquC9U0TUCP1n8AAxGeMYqb1KAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 12.488083889418494%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAW0lEQVQI1z3MSw5AEQwF0CIUNSCxD+x/cfdpE29w0k/aS3sf9N6RczHSGpjZlKK7jJSSiTH+VenNnBMiAu89iAi01sYYA7VWwzfghakXEEKAc87Y46W9Burfmz8A8ywW8ula8AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;migrate&quot;
-        title=&quot;migrate&quot;
-        src=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png&quot;
-        srcset=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/0783d/python_migrate.png 240w,
-/static/351fef54edc2751a9e38dec1c2b552cd/782f4/python_migrate.png 480w,
-/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png 686w&quot;
-        sizes=&quot;(max-width: 686px) 100vw, 686px&quot;
+        alt=&quot;query_set&quot;
+        title=&quot;query_set&quot;
+        src=&quot;/static/c8d259bd7599eb5f171a28abd70a8221/f570d/query_set_select_all.png&quot;
+        srcset=&quot;/static/c8d259bd7599eb5f171a28abd70a8221/0783d/query_set_select_all.png 240w,
+/static/c8d259bd7599eb5f171a28abd70a8221/782f4/query_set_select_all.png 480w,
+/static/c8d259bd7599eb5f171a28abd70a8221/f570d/query_set_select_all.png 960w,
+/static/c8d259bd7599eb5f171a28abd70a8221/8d0ff/query_set_select_all.png 1440w,
+/static/c8d259bd7599eb5f171a28abd70a8221/a987b/query_set_select_all.png 1920w,
+/static/c8d259bd7599eb5f171a28abd70a8221/90c4b/query_set_select_all.png 2098w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&quot;4-tables-내용-확인&quot;&gt;&lt;a href=&quot;#4-tables-%EB%82%B4%EC%9A%A9-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;4 tables 내용 확인 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. TABLES 내용 확인&lt;/h1&gt;
+&lt;h1 id=&quot;2-특정-row만-가져오기-mysql의-where-구문&quot;&gt;&lt;a href=&quot;#2-%ED%8A%B9%EC%A0%95-row%EB%A7%8C-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0-mysql%EC%9D%98-where-%EA%B5%AC%EB%AC%B8&quot; aria-label=&quot;2 특정 row만 가져오기 mysql의 where 구문 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 특정 row만 가져오기 (MYSQL의 Where 구문)&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;CarModels&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;objects&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;model_name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Model S&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 656px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 488px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png&quot;
+    href=&quot;/static/99bed562db570f8b0fb126572a687ffc/2d6e0/objects_filter.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 94.66463414634147%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAABbUlEQVQ4y6WU2Y6CQBBFEWRzRcUdxPVBeDWE//+xMqeSNs5MnGmYh0430H24t26lnf1+L2maymq1ku12K4vFQlzXlX6/L57nieM4P0av13vN34czmUwUmCSJTKdTCYJAgb7vSxiG7YHAdrudHA4Hmc/nCh2Pxy+VrYFYLIpC8jyX5XIpcRy/DnSyjELUUb/1eq0qgUZRpLZbA6kdlglnNBopiEH9OgEJJcsyVQnQbO5smRper1c5nU5aQ54NqFMoQMqylOPxKLfbTe3/C0goWB4OhzrMB9qGnuxUQ8ZgMND+4wez2ewjzMoyINImFBqbHzDzjjXW38P6U6E5DBClrFHKjwiJPe8t9CsQACDa5nK5yGaz0cbGMt9YM9ObVkAOEEZVVVLXtUJNyoDYhGX2WStk8/l8lsfjobNpF96bS8JaIUDG/X6Xpmm+KKQUrI19KyCFJxTSpn5cEoRi7kNgrK1DoecActio+XQp2ACfhnaYhVu9uVgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 7.991803278688526%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAcElEQVQI1z2MOwrAIBAFcxobLURBxQ+uJqLg/c/zkrVIMcXMW/bae2OthRgjWmsYYyDnfGBn8j2RK8E5hznnf9t7h7UW3vvT2K9aKxgOKSWEEKC1Po2fp6/T2jDOQ0mJ5xkgIiilUEqBMQZCiOPy21+vSkO2LfprBAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;show tables;&quot;
-        title=&quot;show tables;&quot;
-        src=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png&quot;
-        srcset=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/0783d/show_tables.png 240w,
-/static/5c9fa68de11fc37bdee21a04267db6c0/782f4/show_tables.png 480w,
-/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png 656w&quot;
-        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
+        alt=&quot;filter&quot;
+        title=&quot;filter&quot;
+        src=&quot;/static/99bed562db570f8b0fb126572a687ffc/2d6e0/objects_filter.png&quot;
+        srcset=&quot;/static/99bed562db570f8b0fb126572a687ffc/0783d/objects_filter.png 240w,
+/static/99bed562db570f8b0fb126572a687ffc/782f4/objects_filter.png 480w,
+/static/99bed562db570f8b0fb126572a687ffc/2d6e0/objects_filter.png 488w&quot;
+        sizes=&quot;(max-width: 488px) 100vw, 488px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;참고 링크
-[velog]:(&lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&quot;&gt;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&lt;/a&gt;)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[database]]></title><description><![CDATA[database]]></description><link>https://evergreen-david.github.io.git//posts/study-database</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-database</guid><pubDate>Sat, 28 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-my-sql-database-깔끔하게-초기화-하기&quot;&gt;&lt;a href=&quot;#1-my-sql-database-%EA%B9%94%EB%81%94%ED%95%98%EA%B2%8C-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 my sql database 깔끔하게 초기화 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. MY SQL DATABASE 깔끔하게 초기화 하기&lt;/h1&gt;
+&lt;h1 id=&quot;3-읽어온-테이블에서-특정-키값만-필터링하기&quot;&gt;&lt;a href=&quot;#3-%EC%9D%BD%EC%96%B4%EC%98%A8-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%ED%82%A4%EA%B0%92%EB%A7%8C-%ED%95%84%ED%84%B0%EB%A7%81%ED%95%98%EA%B8%B0&quot; aria-label=&quot;3 읽어온 테이블에서 특정 키값만 필터링하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 읽어온 테이블에서 특정 키값만 필터링하기&lt;/h1&gt;
+&lt;p&gt;value 함수에 원하는 키값을 전달해주면 다음과 같이 필터링 된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1d6750b6668d3323d1f00f0496a65b89/91931/prefetch_related_values.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 18.67595818815331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAjklEQVQY05VPuxLDIAyD8C40sJIMfERyyf9/mVr5jmwdOviEsSTL6r5vjDFQSkHOGTFExBiRUoK1Fkqp/+o4DvTexcR7/wy01liWRUyJs5/IMsY8OHnqPE9s24bXN926vsWYSZmQbyYnOucEQwiymD2RRS41ctF1Xdj3XQxrrTJorQmJIpKmkGac8//XyR8kZVeNFWaISQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;values&quot;
+        title=&quot;values&quot;
+        src=&quot;/static/1d6750b6668d3323d1f00f0496a65b89/f570d/prefetch_related_values.png&quot;
+        srcset=&quot;/static/1d6750b6668d3323d1f00f0496a65b89/0783d/prefetch_related_values.png 240w,
+/static/1d6750b6668d3323d1f00f0496a65b89/782f4/prefetch_related_values.png 480w,
+/static/1d6750b6668d3323d1f00f0496a65b89/f570d/prefetch_related_values.png 960w,
+/static/1d6750b6668d3323d1f00f0496a65b89/91931/prefetch_related_values.png 1435w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;[Django reference]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(&lt;a href=&quot;https://docs.djangoproject.com/en/3.0/ref/models/querysets/&quot;&gt;https://docs.djangoproject.com/en/3.0/ref/models/querysets/&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[database]]></title><description><![CDATA[database]]></description><link>https://evergreen-david.github.io.git//posts/study-database</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-database</guid><pubDate>Sat, 28 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-my-sql-database-깔끔하게-초기화-하기&quot;&gt;&lt;a href=&quot;#1-my-sql-database-%EA%B9%94%EB%81%94%ED%95%98%EA%B2%8C-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 my sql database 깔끔하게 초기화 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. MY SQL DATABASE 깔끔하게 초기화 하기&lt;/h1&gt;
 &lt;p&gt;my sql &gt; DROP DATABASE [name]
 django &gt; manage.py 있는 루트 디렉토리에서 다음 명령어 실행
 전체 앱의 migrations 디렉토리 안에 makemigrations 결과로 만들어진 0001_initial.py 들을 삭제한다.&lt;/p&gt;
