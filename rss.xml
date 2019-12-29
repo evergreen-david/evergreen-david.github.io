@@ -1,4 +1,142 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 22 Dec 2019 11:01:13 GMT</lastBuildDate><item><title><![CDATA[react - lifecycle]]></title><description><![CDATA[react - lifecycle]]></description><link>https://evergreen-david.github.io.git//posts/react-lifecycle</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/react-lifecycle</guid><pubDate>Fri, 20 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-라이프-싸이클-메서드&quot;&gt;&lt;a href=&quot;#1-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%8B%B8%EC%9D%B4%ED%81%B4-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;1 라이프 싸이클 메서드 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 라이프 싸이클 메서드&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 29 Dec 2019 07:48:25 GMT</lastBuildDate><item><title><![CDATA[database]]></title><description><![CDATA[database]]></description><link>https://evergreen-david.github.io.git//posts/study-database</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-database</guid><pubDate>Sat, 28 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-my-sql-database-깔끔하게-초기화-하기&quot;&gt;&lt;a href=&quot;#1-my-sql-database-%EA%B9%94%EB%81%94%ED%95%98%EA%B2%8C-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 my sql database 깔끔하게 초기화 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. MY SQL DATABASE 깔끔하게 초기화 하기&lt;/h1&gt;
+&lt;p&gt;my sql &gt; DROP DATABASE [name]
+django &gt; manage.py 있는 루트 디렉토리에서 다음 명령어 실행
+전체 앱의 migrations 디렉토리 안에 makemigrations 결과로 만들어진 0001_initial.py 들을 삭제한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;find . -path &amp;quot;*/migrations/*.py&amp;quot; 
+find . -path &amp;quot;*/migrations/*.py&amp;quot; -not -name &amp;quot;__init__.py&amp;quot; -delete&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;2-my-sql-database-다시-만들기&quot;&gt;&lt;a href=&quot;#2-my-sql-database-%EB%8B%A4%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;2 my sql database 다시 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. MY SQL DATABASE 다시 만들기&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;create database tesla character &lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; utf8mb4 collate utf8mb4_general_ci&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;show databases; 로 확인&lt;/p&gt;
+&lt;h1 id=&quot;3-tables-다시-만들기&quot;&gt;&lt;a href=&quot;#3-tables-%EB%8B%A4%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;3 tables 다시 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. TABLES 다시 만들기&lt;/h1&gt;
+&lt;p&gt;Django의 클래스 모델기반으로 테이블을 만들어 준다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 686px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32.06997084548105%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABRklEQVQY022RbU/CMBSFu60dSxhjbiAkCESN8YUoBGSabQzZZK+Imyb8/39yLCUYSfxwc9q0fe49PcRJMvhphunbEuM0x6z8xngV4dFfoNu7R6tmoKVS6HoD7bYN27bR6XRgmibft2FZFprNJiilIISAPEymWK1jfFZfyPMcZVWh3G6x9H0M+j0QWRIXFcpAFQWyLEPhugccVZKk3yLD/gDObIp1FCIKV/BcF0mawvU83t0G46A9hDIVqqoKgMqYWDN2ODsB3r56cJMUfpzADSME3L7Pp3Pmc1xfX6FhGJBkBQp/TFV20BoHc6DC4QL4B0qeps9I8wLZZoO4KFDudgjjGC+uh97FEDKRoHJrjAPEH/1TJxO6iwBBwANxZhhlBUYfFUZJjrvoHVZ3gsv6OW7qGg/hjJfBAzBFELquC9U0TUCP1n8AAxGeMYqb1KAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;migrate&quot;
+        title=&quot;migrate&quot;
+        src=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png&quot;
+        srcset=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/0783d/python_migrate.png 240w,
+/static/351fef54edc2751a9e38dec1c2b552cd/782f4/python_migrate.png 480w,
+/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png 686w&quot;
+        sizes=&quot;(max-width: 686px) 100vw, 686px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-tables-내용-확인&quot;&gt;&lt;a href=&quot;#4-tables-%EB%82%B4%EC%9A%A9-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;4 tables 내용 확인 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. TABLES 내용 확인&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 656px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 94.66463414634147%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAABbUlEQVQ4y6WU2Y6CQBBFEWRzRcUdxPVBeDWE//+xMqeSNs5MnGmYh0430H24t26lnf1+L2maymq1ku12K4vFQlzXlX6/L57nieM4P0av13vN34czmUwUmCSJTKdTCYJAgb7vSxiG7YHAdrudHA4Hmc/nCh2Pxy+VrYFYLIpC8jyX5XIpcRy/DnSyjELUUb/1eq0qgUZRpLZbA6kdlglnNBopiEH9OgEJJcsyVQnQbO5smRper1c5nU5aQ54NqFMoQMqylOPxKLfbTe3/C0goWB4OhzrMB9qGnuxUQ8ZgMND+4wez2ewjzMoyINImFBqbHzDzjjXW38P6U6E5DBClrFHKjwiJPe8t9CsQACDa5nK5yGaz0cbGMt9YM9ObVkAOEEZVVVLXtUJNyoDYhGX2WStk8/l8lsfjobNpF96bS8JaIUDG/X6Xpmm+KKQUrI19KyCFJxTSpn5cEoRi7kNgrK1DoecActio+XQp2ACfhnaYhVu9uVgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;show tables;&quot;
+        title=&quot;show tables;&quot;
+        src=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png&quot;
+        srcset=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/0783d/show_tables.png 240w,
+/static/5c9fa68de11fc37bdee21a04267db6c0/782f4/show_tables.png 480w,
+/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png 656w&quot;
+        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;참고 링크
+[velog]:(&lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&quot;&gt;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&lt;/a&gt;)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[database]]></title><description><![CDATA[database]]></description><link>https://evergreen-david.github.io.git//posts/study-database</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-database</guid><pubDate>Sat, 28 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-my-sql-database-깔끔하게-초기화-하기&quot;&gt;&lt;a href=&quot;#1-my-sql-database-%EA%B9%94%EB%81%94%ED%95%98%EA%B2%8C-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 my sql database 깔끔하게 초기화 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. MY SQL DATABASE 깔끔하게 초기화 하기&lt;/h1&gt;
+&lt;p&gt;my sql &gt; DROP DATABASE [name]
+django &gt; manage.py 있는 루트 디렉토리에서 다음 명령어 실행
+전체 앱의 migrations 디렉토리 안에 makemigrations 결과로 만들어진 0001_initial.py 들을 삭제한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;find . -path &amp;quot;*/migrations/*.py&amp;quot; 
+find . -path &amp;quot;*/migrations/*.py&amp;quot; -not -name &amp;quot;__init__.py&amp;quot; -delete&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;2-my-sql-database-다시-만들기&quot;&gt;&lt;a href=&quot;#2-my-sql-database-%EB%8B%A4%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;2 my sql database 다시 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. MY SQL DATABASE 다시 만들기&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;create database tesla character &lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; utf8mb4 collate utf8mb4_general_ci&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;show databases; 로 확인&lt;/p&gt;
+&lt;h1 id=&quot;3-tables-다시-만들기&quot;&gt;&lt;a href=&quot;#3-tables-%EB%8B%A4%EC%8B%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;3 tables 다시 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. TABLES 다시 만들기&lt;/h1&gt;
+&lt;p&gt;Django의 클래스 모델기반으로 테이블을 만들어 준다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 686px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32.06997084548105%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABRklEQVQY022RbU/CMBSFu60dSxhjbiAkCESN8YUoBGSabQzZZK+Imyb8/39yLCUYSfxwc9q0fe49PcRJMvhphunbEuM0x6z8xngV4dFfoNu7R6tmoKVS6HoD7bYN27bR6XRgmibft2FZFprNJiilIISAPEymWK1jfFZfyPMcZVWh3G6x9H0M+j0QWRIXFcpAFQWyLEPhugccVZKk3yLD/gDObIp1FCIKV/BcF0mawvU83t0G46A9hDIVqqoKgMqYWDN2ODsB3r56cJMUfpzADSME3L7Pp3Pmc1xfX6FhGJBkBQp/TFV20BoHc6DC4QL4B0qeps9I8wLZZoO4KFDudgjjGC+uh97FEDKRoHJrjAPEH/1TJxO6iwBBwANxZhhlBUYfFUZJjrvoHVZ3gsv6OW7qGg/hjJfBAzBFELquC9U0TUCP1n8AAxGeMYqb1KAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;migrate&quot;
+        title=&quot;migrate&quot;
+        src=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png&quot;
+        srcset=&quot;/static/351fef54edc2751a9e38dec1c2b552cd/0783d/python_migrate.png 240w,
+/static/351fef54edc2751a9e38dec1c2b552cd/782f4/python_migrate.png 480w,
+/static/351fef54edc2751a9e38dec1c2b552cd/7a97d/python_migrate.png 686w&quot;
+        sizes=&quot;(max-width: 686px) 100vw, 686px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-tables-내용-확인&quot;&gt;&lt;a href=&quot;#4-tables-%EB%82%B4%EC%9A%A9-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;4 tables 내용 확인 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. TABLES 내용 확인&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 656px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 94.66463414634147%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAABbUlEQVQ4y6WU2Y6CQBBFEWRzRcUdxPVBeDWE//+xMqeSNs5MnGmYh0430H24t26lnf1+L2maymq1ku12K4vFQlzXlX6/L57nieM4P0av13vN34czmUwUmCSJTKdTCYJAgb7vSxiG7YHAdrudHA4Hmc/nCh2Pxy+VrYFYLIpC8jyX5XIpcRy/DnSyjELUUb/1eq0qgUZRpLZbA6kdlglnNBopiEH9OgEJJcsyVQnQbO5smRper1c5nU5aQ54NqFMoQMqylOPxKLfbTe3/C0goWB4OhzrMB9qGnuxUQ8ZgMND+4wez2ewjzMoyINImFBqbHzDzjjXW38P6U6E5DBClrFHKjwiJPe8t9CsQACDa5nK5yGaz0cbGMt9YM9ObVkAOEEZVVVLXtUJNyoDYhGX2WStk8/l8lsfjobNpF96bS8JaIUDG/X6Xpmm+KKQUrI19KyCFJxTSpn5cEoRi7kNgrK1DoecActio+XQp2ACfhnaYhVu9uVgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;show tables;&quot;
+        title=&quot;show tables;&quot;
+        src=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png&quot;
+        srcset=&quot;/static/5c9fa68de11fc37bdee21a04267db6c0/0783d/show_tables.png 240w,
+/static/5c9fa68de11fc37bdee21a04267db6c0/782f4/show_tables.png 480w,
+/static/5c9fa68de11fc37bdee21a04267db6c0/82704/show_tables.png 656w&quot;
+        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;참고 링크
+[velog]:(&lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&quot;&gt;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&lt;/a&gt;)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[react - lifecycle]]></title><description><![CDATA[react - lifecycle]]></description><link>https://evergreen-david.github.io.git//posts/react-lifecycle</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/react-lifecycle</guid><pubDate>Fri, 20 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-라이프-싸이클-메서드&quot;&gt;&lt;a href=&quot;#1-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%8B%B8%EC%9D%B4%ED%81%B4-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;1 라이프 싸이클 메서드 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 라이프 싸이클 메서드&lt;/h1&gt;
 &lt;p&gt;라이프 싸이클 메서드는 클래스형 컴포넌트에만 사용할 수 있는데, 이게 바로 클래스형 컴포넌트를 사용하는 이유로 생각된다.&lt;/p&gt;
 &lt;h1 id=&quot;2-getderivedstatefromprops&quot;&gt;&lt;a href=&quot;#2-getderivedstatefromprops&quot; aria-label=&quot;2 getderivedstatefromprops permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. getDerivedStateFromProps&lt;/h1&gt;
 &lt;p&gt;props로 받아온 값을 state에 동기화 시킬때 사용&lt;/p&gt;
