@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 04 Jan 2020 08:44:03 GMT</lastBuildDate><item><title><![CDATA[first project in wecode]]></title><description><![CDATA[first project in wecode]]></description><link>https://evergreen-david.github.io.git//posts/first-project-in-wecode</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/first-project-in-wecode</guid><pubDate>Sat, 04 Jan 2020 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-프로젝트-내용&quot;&gt;&lt;a href=&quot;#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%82%B4%EC%9A%A9&quot; aria-label=&quot;1 프로젝트 내용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 프로젝트 내용&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Jan 2020 05:52:12 GMT</lastBuildDate><item><title><![CDATA[aws ec2 with rds]]></title><description><![CDATA[aws ec2 with rds]]></description><link>https://evergreen-david.github.io.git//posts/aws-ec2-rds</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-ec2-rds</guid><pubDate>Sun, 05 Jan 2020 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-aws-사용법&quot;&gt;&lt;a href=&quot;#1-aws-%EC%82%AC%EC%9A%A9%EB%B2%95&quot; aria-label=&quot;1 aws 사용법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. AWS 사용법&lt;/h1&gt;
+&lt;p&gt;EC2 실행중인 인스턴스로 가서 IPv4 퍼블릭 IP를 확인한다.
+ssh를 통해 접속하는 방법은 EC2 인스턴스를 만들때 발급받은 key를 가지고 ssh로 접속한다.
+접속 방법은 다음과 같다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ssh -i my_key.pem ubuntu@IPv4&lt;/code&gt;
+&lt;br&gt;나중에 개발이 끝나고 배포하게 되면 해당 아이피를 프론트 엔드 개발자에게 알려줘야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;2-rds-사용법&quot;&gt;&lt;a href=&quot;#2-rds-%EC%82%AC%EC%9A%A9%EB%B2%95&quot; aria-label=&quot;2 rds 사용법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. RDS 사용법&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 843px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2dea2619305a6fbeec607fd392e95c83/b28c0/ec2_rds.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 46.500593119810205%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQoz42RyXKDMBBE+f9/S3KI7UAgPsQsxgazg0CCjmZYCifGFVW9ammQWj3CuEYRXl7fYNk23nd7HD5M7PYHVtP6hHM8wnYcnpuWhSzPkRcF6yOMJE3hBwGiOGb9Prn40iYn14Pn+wjOodZAr124nrcYbmEUZYmzPkSb66aBUgpS03Ud007aSckqhEDzBKOsKsQ6XRTFaNsWUh8k+r5foEtm1vVHsCG9Y3i5cDtploFqbTumm03UP2FDaodaqep6bFGvZ0O5Sqc4hbpL/Buj0oZ13SC8xkjSjItbQ0p63x7PxphQJ8krsRSHYfgDjboRKEW3uYdgQ/q7t1vCbVKRH5h0Yq5N1+n5cPd9zQ/nEbqHAfvlIgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;rds&quot;
+        title=&quot;rds&quot;
+        src=&quot;/static/2dea2619305a6fbeec607fd392e95c83/b28c0/ec2_rds.png&quot;
+        srcset=&quot;/static/2dea2619305a6fbeec607fd392e95c83/0783d/ec2_rds.png 240w,
+/static/2dea2619305a6fbeec607fd392e95c83/782f4/ec2_rds.png 480w,
+/static/2dea2619305a6fbeec607fd392e95c83/b28c0/ec2_rds.png 843w&quot;
+        sizes=&quot;(max-width: 843px) 100vw, 843px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/76706/rds_endpoint.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.160997732426296%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABVUlEQVQoz5VSy0oDQRDcv/ET/A+/TryIiBiFRKIYMIgePXj1kFMigo9L9pF5bmam2+rNbmJUEAeK7q6dru6e3mwwvKbL0ZhH43s+6g2m+4ens5PzC+71r+hs0ID/RH/jZ9Eb4tWhmOIDzGNKkTuO/3myIp8n51yjUJbVJIQwET+lRCsQg2PcEW4LMUZWVvEyLNdcZqxdt1JVZW6MyZ3zIpCscwRLFneqxYK99+QA36Bu4rIqSWnNvm5iCBrzQUTvMaWlqgo2WrGxjiHG2hjOi4IXSpHWepWIJOGFA1hrw8KLL8jQ5i6a24F9nudFjbFfEb+giOANkNEZRkYkNDBHbLefZfMMGXj52GwGY82cr+/gDpE/hL0NaF1EWwELwQO403YH6cdSOieg+m9bE/KLYI2Rb+A+ccu3hztk7WWCILYVpGIEtUaX1woobHwP7nFbL37/tT4Botir1l+KsEwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;rds_endpoint&quot;
+        title=&quot;rds_endpoint&quot;
+        src=&quot;/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/f570d/rds_endpoint.png&quot;
+        srcset=&quot;/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/0783d/rds_endpoint.png 240w,
+/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/782f4/rds_endpoint.png 480w,
+/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/f570d/rds_endpoint.png 960w,
+/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/8d0ff/rds_endpoint.png 1440w,
+/static/bf5f85f5a0a2c5a00bcd717d6f6eb473/76706/rds_endpoint.png 1764w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;EC2에서 RDS로 접속할때 필요하므로 RDS를 만들때 사용했던 사용자와 비밀번호는 기억해야 한다.
+위에서 확인한 엔드포인트 정보가 필요하고 접속 방법은 다음과 같다.
+&lt;code class=&quot;language-text&quot;&gt;mysql -h [엔드포인트 주소] -u root -p&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/450d19b1467ec66b7d6f063a8d91ea3c/a5d5c/rds_connect.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.32876712328768%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAABz0lEQVQ4y31U27KbMAw0xlyT4doYA5nJSf7/G85D2z/pX3RSVK2DqTGnediRCPFqV5IRt4+PZbzdyBjz+6L1z77/9j1Jkh9Sxp9Zmv46n06UZemilFqiKCIpJbnociHEv9yYkUZjFjMMNAyamrqmE5PkRUkFQ0m5RHwAEG/gCoiu75e6aQix7bon58+mbZ9VVT/zLPsTxzEqQ92Cg1ARQqwqbX65aLaUWaRpSmyN2DLnGRVlSQn/5qr7FnekvtqBrdZsEyShhVglDEVQ6cgcoY+dWq01tW1r1fgvQIIiyaoYygFf7VeKRd/3VLHCoiwOVUGq1IsMucM7+1Zh13d0Pp95qsULTI7nnHP0ErBqV6XbRL3iW0QPYTnP8204AJ4tQaBspyYg2xRqPVgCd8hVfpH5/ToO42B5miYaGbAKRX6PfPJ3k91Nf5pnul6vTPiy6F7atVmh/mP3qyJiZkLNfUxS7Fy8u6uud3bK3j6G5Lsi8zzRYMxhscMVkTKyaqUtFh12cSO0e1hV9oPgrt6mzKpzUNs7dz3DHlvShj8Mj8fD9vF+v1tiDAgRKPkGYSeRI+KaIgIg3q0MiHFLxnGkruvsn53NUJFao3PhFjyc+F8vnmdSitaOeQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;rds_connect&quot;
+        title=&quot;rds_connect&quot;
+        src=&quot;/static/450d19b1467ec66b7d6f063a8d91ea3c/f570d/rds_connect.png&quot;
+        srcset=&quot;/static/450d19b1467ec66b7d6f063a8d91ea3c/0783d/rds_connect.png 240w,
+/static/450d19b1467ec66b7d6f063a8d91ea3c/782f4/rds_connect.png 480w,
+/static/450d19b1467ec66b7d6f063a8d91ea3c/f570d/rds_connect.png 960w,
+/static/450d19b1467ec66b7d6f063a8d91ea3c/8d0ff/rds_connect.png 1440w,
+/static/450d19b1467ec66b7d6f063a8d91ea3c/a5d5c/rds_connect.png 1460w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;3-ec2에서-rds로-db-연결-확인&quot;&gt;&lt;a href=&quot;#3-ec2%EC%97%90%EC%84%9C-rds%EB%A1%9C-db-%EC%97%B0%EA%B2%B0-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;3 ec2에서 rds로 db 연결 확인 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. EC2에서 RDS로 DB 연결 확인&lt;/h1&gt;
+&lt;p&gt;내컴퓨터에서 확인하는 방법과 마찬가지로 다음과 같이 EC2 서버에서 장고 ORM을 통하여 RDS에 구축되어 있는 데이터베이스의 테이블을 조회 할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7b2b78f0f80d31268417ee46447f8f84/44e11/rds_query_in_ec2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 29.077429983525533%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABFUlEQVQY03WRTW6DMBCFzW9BOMYYSGqCELsAQmo2IJa9by/QY/QYPUMV+dXjkEhddPHpzeCZ5/HA6quCeMs+GGP5sbx+avWOY7HclDqhKCSUUkiSBEEQIIoip77vP7F9aNsW4zhiGAawc9dAd/onF+JLSvVdyBMOvDRZdoCUEjzjzoiaPc/7Y0Y5GXZdh2maHIxzbizu5r3AeD5zDUEQwtsb/+Mx4eVycbCqqqAbbcqyvNlJDBlbDE31EsdI7XOTndjmRBiGbgCKSfu+xzzP9wl10+D1rNFYpX0R1tzur0BlVZHaS4m6rp9KNVRLryOzbduwLAuYM6juh2RCPIopFkIgz3O3T/pGMZ1TTmdpmrofsq6r4xeLxIx8UcDebgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;rds_connect&quot;
+        title=&quot;rds_connect&quot;
+        src=&quot;/static/7b2b78f0f80d31268417ee46447f8f84/f570d/rds_query_in_ec2.png&quot;
+        srcset=&quot;/static/7b2b78f0f80d31268417ee46447f8f84/0783d/rds_query_in_ec2.png 240w,
+/static/7b2b78f0f80d31268417ee46447f8f84/782f4/rds_query_in_ec2.png 480w,
+/static/7b2b78f0f80d31268417ee46447f8f84/f570d/rds_query_in_ec2.png 960w,
+/static/7b2b78f0f80d31268417ee46447f8f84/44e11/rds_query_in_ec2.png 1214w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-api-테스트-방법&quot;&gt;&lt;a href=&quot;#4-api-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;4 api 테스트 방법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. API 테스트 방법&lt;/h1&gt;
+&lt;p&gt;localhost 대신에 EC2의 IPv4 퍼블릭 IP로 바꿔서 테스트 한다.
+&lt;a href=&quot;http://localhost:8000/price/model/2&quot;&gt;http://localhost:8000/price/model/2&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[first project in wecode]]></title><description><![CDATA[first project in wecode]]></description><link>https://evergreen-david.github.io.git//posts/first-project-in-wecode</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/first-project-in-wecode</guid><pubDate>Sat, 04 Jan 2020 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-프로젝트-내용&quot;&gt;&lt;a href=&quot;#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%82%B4%EC%9A%A9&quot; aria-label=&quot;1 프로젝트 내용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 프로젝트 내용&lt;/h1&gt;
 &lt;p&gt;테슬라 한국 홈페이지(&lt;a href=&quot;https://www.tesla.com/ko_kr&quot;&gt;https://www.tesla.com/ko_kr&lt;/a&gt;) 주문 시스템 클론&lt;/p&gt;
 &lt;h1 id=&quot;2-사용한-기술과-구현결과&quot;&gt;&lt;a href=&quot;#2-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B8%B0%EC%88%A0%EA%B3%BC-%EA%B5%AC%ED%98%84%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;2 사용한 기술과 구현결과 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 사용한 기술과 구현결과&lt;/h1&gt;
 &lt;p&gt;파이썬, Django framework, MySQL, AWS EC2/RDS&lt;/p&gt;
@@ -48,7 +179,9 @@ API Documentation(&lt;a href=&quot;https://documenter.getpostman.com/view/981666
       &lt;span class=&quot;token string&quot;&gt;&apos;basic_price&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; car&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;basic_price&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
       &lt;span class=&quot;token string&quot;&gt;&apos;model_type&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; CarTypes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;objects&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;car&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;type_id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_type&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; car &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;car_models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;values&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;협업을 통하여 프론트에서 데이터베이스 업데이트 Fetch / 현재 종합된 가격 fetch 를 연속으로 호출 하였는데 옵션이 추가된 가격이 백엔드에서 리턴이 되지 않아서 결과가 리턴될때까지 기다리는 await fetch call로 개선하였음.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[python queryset]]></title><description><![CDATA[python queryset]]></description><link>https://evergreen-david.github.io.git//posts/study-python-queryset</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-python-queryset</guid><pubDate>Sun, 29 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-query-set-이란&quot;&gt;&lt;a href=&quot;#1-query-set-%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;1 query set 이란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. QUERY SET 이란&lt;/h1&gt;
+&lt;p&gt;협업을 통하여 프론트에서 데이터베이스 업데이트 Fetch / 현재 종합된 가격 fetch 를 연속으로 호출 하였는데 옵션이 추가된 가격이 백엔드에서 리턴이 되지 않아서 결과가 리턴될때까지 기다리는 await fetch call로 개선하였음.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;데모영상
+&lt;a href=&quot;https://youtu.be/JQ6JGS6QFsQ&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/JQ6JGS6QFsQ/0.jpg&quot; alt=&quot;Watch the video&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[python queryset]]></title><description><![CDATA[python queryset]]></description><link>https://evergreen-david.github.io.git//posts/study-python-queryset</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/study-python-queryset</guid><pubDate>Sun, 29 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-query-set-이란&quot;&gt;&lt;a href=&quot;#1-query-set-%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;1 query set 이란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. QUERY SET 이란&lt;/h1&gt;
 &lt;p&gt;데이터 베이스에서 읽어온 객체들의 집합이다.
 파이썬 쉘에서 다음과 같이 테이블 자료 조회&lt;/p&gt;
 &lt;p&gt;&lt;span
