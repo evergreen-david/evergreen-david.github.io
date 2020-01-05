@@ -49,4 +49,7 @@ type_list = [
   } for car in list(cars.car_models.all().values()]
 ```
 
-협업을 통하여 프론트에서 데이터베이스 업데이트 Fetch / 현재 종합된 가격 fetch 를 연속으로 호출 하였는데 옵션이 추가된 가격이 백엔드에서 리턴이 되지 않아서 결과가 리턴될때까지 기다리는 await fetch call로 개선하였음.
+협업을 통하여 프론트에서 데이터베이스 업데이트 Fetch / 현재 종합된 가격 fetch 를 연속으로 호출 하였는데 옵션이 추가된 가격이 백엔드에서 리턴이 되지 않아서 결과가 리턴될때까지 기다리는 await fetch call로 개선하였음.<br>
+
+데모영상
+[![Watch the video](https://img.youtube.com/vi/JQ6JGS6QFsQ/0.jpg)](https://youtu.be/JQ6JGS6QFsQ)
