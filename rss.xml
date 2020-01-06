@@ -1,4 +1,233 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Jan 2020 05:52:12 GMT</lastBuildDate><item><title><![CDATA[aws ec2 with rds]]></title><description><![CDATA[aws ec2 with rds]]></description><link>https://evergreen-david.github.io.git//posts/aws-ec2-rds</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-ec2-rds</guid><pubDate>Sun, 05 Jan 2020 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-aws-사용법&quot;&gt;&lt;a href=&quot;#1-aws-%EC%82%AC%EC%9A%A9%EB%B2%95&quot; aria-label=&quot;1 aws 사용법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. AWS 사용법&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 06 Jan 2020 23:27:10 GMT</lastBuildDate><item><title><![CDATA[postman for team development]]></title><description><![CDATA[postman for team development]]></description><link>https://evergreen-david.github.io.git//posts/postman-team-development</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/postman-team-development</guid><pubDate>Tue, 07 Jan 2020 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-api-documentation&quot;&gt;&lt;a href=&quot;#1-api-documentation&quot; aria-label=&quot;1 api documentation permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. API Documentation&lt;/h1&gt;
+&lt;p&gt;문서화를 위한 문서화가 아닌, 실제 테스트 완료된 API로써 Documentation이 가능하며 배포 후에도 기능 변경시
+유지/보수가 쉽다.
+예를 들어, 내가 Endpoint API를 하나 구현하고 간단하게 바로 Documentation이 가능하다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0610e0e2a8f4ff3310e21413957285dc/a808b/save_api.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.93243243243244%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACFklEQVQ4y31SW28SQRjd32rCRYiGJlYeUfbC3mZmF/wZxPjUtA9geFcuNanPRg0B4oO1ZWGBHr9v2KVgGjc5Od9c9sw534zRfPkMr188R7lSRbVaRblcRqlUOkGxWESxUECZ6kqlggLVzE/tNTzHgWtbsMwmbIvYtmERm6ZJbO9Zr5lwaM11XXiep8F1q9U6gaGkQCQl2pFCHEWI4zYkjYMg0PB9X7NHfCx2DCHEAYZ/9FMYhnoyDGjse1qYx8yNRgOvzs9ROztDrVY7oF6v63WllGYjJIe5G56IyCUvqqyO41ivjUdDbFcJlre/kdzf4X65xGazwXQ6Rbvd1v/wfkNSkdtlQRaQItSu2THDcVoYjUbYpCmSTCj/FovFv4LiEDV3yJCC4vrsWlGffEwmE+x2OyRJogVz0fl8jk6nc0hjREqciPGkUhSbRekgSRdh2S1cX3/RAg+7rWYW/68gu8wj6x5yL2k+oLhvmw6GozHSdI27P7fEKbbbvfBsNtMvQ1ASSUYMlUXOY2sxvrHsYkQoYNouPn0eYr1eY7VaaU4JD3TA9OcPRCxILZKSBCNyFGfI670gOeRD6OFbjovxeKIdce84bh55RpHfHUeOs0vI8Si4dxi4Ht40bdzcfMXxx7GxXuLX92+QcQcBJQmFIodPCWZvcT8XUzsEut0uBoMB+v0+er0eLq+u8PHyAhcf3tOzeXT4FwIT678CNg3tAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;save_api&quot;
+        title=&quot;save_api&quot;
+        src=&quot;/static/0610e0e2a8f4ff3310e21413957285dc/f570d/save_api.png&quot;
+        srcset=&quot;/static/0610e0e2a8f4ff3310e21413957285dc/0783d/save_api.png 240w,
+/static/0610e0e2a8f4ff3310e21413957285dc/782f4/save_api.png 480w,
+/static/0610e0e2a8f4ff3310e21413957285dc/f570d/save_api.png 960w,
+/static/0610e0e2a8f4ff3310e21413957285dc/8d0ff/save_api.png 1440w,
+/static/0610e0e2a8f4ff3310e21413957285dc/a808b/save_api.png 1480w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+개인적으로는 하기 템플릿을 사용하여 테스트후 즉시 Documentation을 하면 개발이 끝난 후에 따로 시간을 내서 정리하지 않아도
+문서화가 가능한 장점이 있다.&lt;/p&gt;
+&lt;dl&gt;
+Description
+&lt;details&gt;
+ &lt;summary&gt;return&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;some notes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;/dl&gt;
+&lt;h1 id=&quot;2-api-수정-및-배포-방법&quot;&gt;&lt;a href=&quot;#2-api-%EC%88%98%EC%A0%95-%EB%B0%8F-%EB%B0%B0%ED%8F%AC-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;2 api 수정 및 배포 방법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. API 수정 및 배포 방법&lt;/h1&gt;
+&lt;p&gt;수정 후 퍼블리시 하면 URL이 생성되며 URL을 관계자와 공유하면 된다.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 586px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dc226327492924d54565bbb4aebbd404/67f41/postman_deploy.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 130.37542662116041%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAAsSAAALEgHS3X78AAADqklEQVRIx61VzW4jRRic54hyjjgERUgoh/AA8ALc98gdceMBuJPYRpzQXrhxYOM4ASQeAa4g1st6s3Y84xnP//8UVT3Ts95ILBfGKrU9PV1dX33VY+eHr77E7Jsv8P23X+O72QSTyRTTicYJptOpGWezGa6urnB5efmfcJ4++Ri/ffYJfv/0PXz+0Qne//AcH5yd4Yw4Pz/H6ekpLi4ucHJygqOjIxwfH78Tzs/zZ/jl5kf8ejvHT4s5bm4WxI3BYsFxPh9/99/nuL6+5twCd3d3Bre3tyMc8Gq6Dv/X5RRFgSRJsN/vkeU58iRGtF3j9fM/sXnxFxLvAXmaICU8P0QQ8ZksQxAEuL+/x2azwXq9huu68DwPThmHKP0tKkKj+b333iAg8gxlVaGqSkRRSPLUiIiiCHEcm9F+dzQZU1242yEOfD6cISsqohzGyijPsh5xnHDMjKrVy5fYUdV2uzVql8slHM/dUfYW680DXG+HNCEhSdNEKt6GNtvvQzznwogKE26QDGpj/SYcn+oePBeb9cb4sd26xg8tFIkUWWgjlfWaavxXfyNYLVHEUU/K+zkrcfZpDHcfGOk7li1jRSjTfd83sIaXZYm6rg1i30NKxFxb0V9dHdPiVF2Doq1RstvFAC0Mw9B4o000SpkWak4eVnWDlCUX9FpEFk5JsqzuHxLkg0hFIHUiVOOkSoQ2Zm3TGBG6b9WhUw6bGmlVmEUWIhahyKTUKq9MdHrSiJ4WVGsrEnla5JawHLqaGEKZKyJlS4EXseZGQubSW/5hPEwGAQk3CHgo3igcCKXMKrRhFTQnJdbHgJu8Wq2MLWqYzyZ6Lk+KGpLW2rXPlC1ZytQMLdCo+4clq9yciBibmvdqclRlAaduWH9djE05bI6NjmLz2EMRFGxI0zaoeBzDF0vkHB00OboqHiJQjB6qXB0n+SdiS6Y5bdaQLKPCtmtRsxkp81hLoQjbiqcgL8ZI2K56Q9i1ienk4OFbCtkDkeoqaRMJMxL2Cm255oUxNEWEh+FW7ixhRnKV3JKUsUbOIzwSJmnvm42OYiOFNjYq+7HC3BISHVVWis0hoV6iIpRPIloxFiJ6fFoU4pwIuKb9N4UqOT0ItsoTqaBOW2LZYP0suUFrFfIzKFSXk9FDEaokkUihvFP5ds5AIefpMl0eCHOeHh1mp2sKtHXaK0yTcaFKF5GU2WNoz7Upm4Qxk9GX3Ji/h0axOXz1HOJdl+b1HxPSmm70EMh3Hv4BIQ2JsBv/LYQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;postman_deploy&quot;
+        title=&quot;postman_deploy&quot;
+        src=&quot;/static/dc226327492924d54565bbb4aebbd404/67f41/postman_deploy.png&quot;
+        srcset=&quot;/static/dc226327492924d54565bbb4aebbd404/0783d/postman_deploy.png 240w,
+/static/dc226327492924d54565bbb4aebbd404/782f4/postman_deploy.png 480w,
+/static/dc226327492924d54565bbb4aebbd404/67f41/postman_deploy.png 586w&quot;
+        sizes=&quot;(max-width: 586px) 100vw, 586px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 871px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7b86474b488b69c390c1641c97ed831d/05040/published_collection.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 99.31113662456946%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAACf0lEQVQ4y41Uy47aMBTlE2Y3v8A3zR+wYjuabaequqi6Zlex4ytaabpgOVLVqUBqQUMFw5B34iR2Yp/eazCQAG0t3dhR7JNzzz3XHWMMZrMZptMp5vM5FosFJpMJfjw94dl7gQFQVRWEEIjCEFlRoFytkL5/h/TjByRv30AMP4EHY3V4IaVEnuf74MNZliGXJQEa1HUNpRTKsoQk8CpJUD48oPxK8eUz1OPjAZAfIf2ZQc4N/v4/w+2zgJ63QRzHKCgdZqa1thvspt18EsR6H7S/wTBjfQhQULr8H/MXFsbNrXCjw2yC9Qp1IaBLApQFTEnB+vG7i7o6gF4APDAMfag0AnJKN4th8hSmyGBEso2MQskGWyZyHAcN6bFZzCHS9LLgLuiQpGrrnWbnJNnaJthAJJGtdJ4LWxz2HluFo6a1sw6P8XiM29tb3N/f4+7uDsPhsAmYZAJ+EFj7xFGEVORQL8+Q38dQP79Z/ZihAxyNRri6ukK328X19TVubm6aGjKDqlKWlWOidc1CbWM3+Jtj2Ov1LMt+v4/BYHBqbN/37bzZbGzntLVzol/SrwG4Xq+xXC5tHzMwM0UL6LhEDFrZrKqd7nlTw4h0Y3bcq21bGE2SGI1QFZA0XzL+3jbucuCW4/lcSpr0jf0XiOAVZeihZq9SaPKu9Wzb2C4FBuRwdnHriq1DdgKbu5LW5EaV227i9zZgEEbwSLuEriWupNPHVn1X+foft04j5SLykQYeUkrbWWPfp7wmCylqSykyVNTnYF+SDJalajHkhVrNEP/+hVcvgNwV5tD4dJ4vYG+Nwn9FQV1Vk556/QydhNteb6fcTub4PtyzPPGlPpvyH1VgBudMXqxOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;published_collection&quot;
+        title=&quot;published_collection&quot;
+        src=&quot;/static/7b86474b488b69c390c1641c97ed831d/05040/published_collection.png&quot;
+        srcset=&quot;/static/7b86474b488b69c390c1641c97ed831d/0783d/published_collection.png 240w,
+/static/7b86474b488b69c390c1641c97ed831d/782f4/published_collection.png 480w,
+/static/7b86474b488b69c390c1641c97ed831d/05040/published_collection.png 871w&quot;
+        sizes=&quot;(max-width: 871px) 100vw, 871px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;3-팀협업&quot;&gt;&lt;a href=&quot;#3-%ED%8C%80%ED%98%91%EC%97%85&quot; aria-label=&quot;3 팀협업 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 팀협업&lt;/h1&gt;
+&lt;p&gt;팀 워크 스페이스로 가서 New Collection 을 만들고 Invite로 초대를 보낸다&lt;br&gt;
+팀원 전체가 API 수정 가능하며 개발전에도 이기능을 통하여 Input/Output 데이터 협의 가능함&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/621073d19971dbcb452942224a176f0d/b5fe4/postman_invite.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.44318895166353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAByUlEQVQoz4WSyY7TQBCG/ZhZlGNyyiZOXENiO1662zZvgAQXRpwmZJmQiNcAPAoHrhzQBEU4zk9VJe1hYEa09LtK7a6vqqvaef5sgP5giOFwgG63W6nf76PdbqPRaKDZbKLVaqFer4vPYr9Wq6HT6aDX61Vxju9OMHkxgjch67oYkx2PxyLf95GmqShJEiiloLUWG8ex2Ol0Cs/zKjlRGJ5/kthGUSQHGbjdbvG/tVouBWSMkTiHP+qSVTJHIVVxzrxeryWoKH6Rin/EazabIQgCAbIceyUrY7RcL6DKN5uNBJ3KEuWxwPF4rFTSHq/5fI4wDKUVAuRgKwbGdGW+Ovdztbq5VFhUEAu0FVqg7bNjHWuNIThl8wW4wn6/x+FwqGCn00n0d4VPAjWVnWYZ/NEIS+rPHQEZavtmKy0vQ5kvFjTIEBnFMONxIPn+xMWHm/XT4/35A/j+De+vr+H5AQ02Qaz0PTD5A8h+QE/h3dUVdruvyPMvuL3NRXlO2u3w6eMCn99kePv6FRTFZJehPgCmDNQETFJofrBUpUvZeeIPFJCUQZC8REznuQiRNo8A+T3xcGgwYaQQxXw4Oe+Ze3EwPxW2SpvK/gbtRco97kH6PgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;postman_invite&quot;
+        title=&quot;postman_invite&quot;
+        src=&quot;/static/621073d19971dbcb452942224a176f0d/f570d/postman_invite.png&quot;
+        srcset=&quot;/static/621073d19971dbcb452942224a176f0d/0783d/postman_invite.png 240w,
+/static/621073d19971dbcb452942224a176f0d/782f4/postman_invite.png 480w,
+/static/621073d19971dbcb452942224a176f0d/f570d/postman_invite.png 960w,
+/static/621073d19971dbcb452942224a176f0d/8d0ff/postman_invite.png 1440w,
+/static/621073d19971dbcb452942224a176f0d/b5fe4/postman_invite.png 1593w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-unit-테스트&quot;&gt;&lt;a href=&quot;#4-unit-%ED%85%8C%EC%8A%A4%ED%8A%B8&quot; aria-label=&quot;4 unit 테스트 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Unit 테스트&lt;/h1&gt;
+&lt;p&gt;Runner를 실행 후에 원하는 테스트를 선택하고 Run [Collection]으로 실행한다.
+이기능을 활용하면 배포전 한번에 API Unit Test가 가능
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/31b706c855525e62373281c71a29ff28/b8f32/postman_unittest.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.52279635258359%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABp0lEQVQoz31SW27bMBDUfftdwLbsAnYLt8gVeofeoJ89RYHAhiVZ1ZuSKVMSrekOEwZOG2SBwS53l8PhksH3hy/4/PUb9vs9wsVHrD+FCFchlsulw2q1wmKxQLheu9ivPdiz2+2w3W6x2WwQqCJHnkTI0jOSc4qyKJFlGcqyRF3XggqV+OIcS65AnueuXlXVc71+idM0FcKqxKXr0DQ12rbF7XaDtdZ5Gv3MQOXodQfd9xjHAW/ZOI4IzDC4oJfGTognIZtkTVLaPM+Su2EsEihVC1qBcnXWPGhaawSenUpIasVfr1dXHOQwYwxG2WzrDPrypJB9rPkDPSHzgV9M0+SISOxIRCVz9FZabB5BqxKq7Vz+Xp3n4P4XQl6BCfquu8g8O4mf58h6/QdGt6JcFIp6v+9dQkp2ao2GuSjM9kmJIyxi6KZEIzPkrKncPdh7V+ZVqeox0/idGWQND5jdK5Mcd5vfslcKp8m6q/RmxMNPhQ8/Gvx6JKHM1gzuEajqX/g501N5cC+Z3yGOY/nkCXJBek7cmoii6D+cTiccDgccj0cX89P/BT8+OQE6EaCOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;post_man_unittest&quot;
+        title=&quot;post_man_unittest&quot;
+        src=&quot;/static/31b706c855525e62373281c71a29ff28/f570d/postman_unittest.png&quot;
+        srcset=&quot;/static/31b706c855525e62373281c71a29ff28/0783d/postman_unittest.png 240w,
+/static/31b706c855525e62373281c71a29ff28/782f4/postman_unittest.png 480w,
+/static/31b706c855525e62373281c71a29ff28/f570d/postman_unittest.png 960w,
+/static/31b706c855525e62373281c71a29ff28/8d0ff/postman_unittest.png 1440w,
+/static/31b706c855525e62373281c71a29ff28/b8f32/postman_unittest.png 1645w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Test 결과 리포트도 만들어줘서 다운로드 받을 수 있음.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eecaed5810618301ba83c29a862af7ad/202d9/export_result.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.11750599520384%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAAB3UlEQVQoz21Sy47TQBD0RyMecVgS7SaRgA9A4sAfcOALOCFx4bYSYkFsHNtx7Pg5L8d2UnSPPZADLZVmume6XNVj7/3bDdav32Cz3mDuP8PNq5dYLpdYrVaYz+fwfd+ujNlsRnd8+E+fwH/xfMxvFljcrnF7d0e9C3hNcUSexCiyDD+jHfZhgGMYIjtSnVAUhUVZFqjqBvk+QvbxHXZfPyOi+5++HfDhyxFp+Ig42MI7GY2h79F3HeIkQikqtMbAEE6nEzqq93TOK+d8t9MKhtC2LXTbwQyAPuyQb3/Bq6oajRCQUqLMczRG2b1SyhKdz2eLYRgsLpcLun6wH+AcuICjpVwqDc9oDU3gC4JImlZDSWVrTMhNTOj2TNhbta3t4TOmZFdlXcFjJdysSBUrZYVqUuhUOIVMaglpZfsMPuPgEQkp4Dkl3NzIkVBOI7hW+D9Cp5CDc6UkKZwsc0FQoSZCMRG6B3Hzu54p3+dH+TtXHplkQjUS8ixZoTwZa1eThZHsbBsYbs/hXDmFTFw3ZNkOdbJRlCXSMrf/X56mqKvK2mBo+k3snlQYM85ciIacCHoQbVetSSGugq3ukwOy9IDgxwPuv//Gw2OMXZwgiP5hG+4JiUUQjjnXq0bhD+NBNeY+SX2hAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;post_man_unittest&quot;
+        title=&quot;post_man_unittest&quot;
+        src=&quot;/static/eecaed5810618301ba83c29a862af7ad/f570d/export_result.png&quot;
+        srcset=&quot;/static/eecaed5810618301ba83c29a862af7ad/0783d/export_result.png 240w,
+/static/eecaed5810618301ba83c29a862af7ad/782f4/export_result.png 480w,
+/static/eecaed5810618301ba83c29a862af7ad/f570d/export_result.png 960w,
+/static/eecaed5810618301ba83c29a862af7ad/8d0ff/export_result.png 1440w,
+/static/eecaed5810618301ba83c29a862af7ad/202d9/export_result.png 1668w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;5-기타-기능&quot;&gt;&lt;a href=&quot;#5-%EA%B8%B0%ED%83%80-%EA%B8%B0%EB%8A%A5&quot; aria-label=&quot;5 기타 기능 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5. 기타 기능&lt;/h1&gt;
+&lt;p&gt;리턴된 Json 타입이 필요한 Response 다운로드 방법
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a06d1f5497e82ccb428aa0f3ff253794/d654f/save_response_file.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 38.26259946949602%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAAy0lEQVQoz6WQyQ7CMAxE8/+/yYFVpSSO42wd7FLEKiHg8OQkjkeecbkU5JJRrOZbrbW+xfpGaw1N70bVc1UNDh6uTxOmJ0zQBnrvD1hPRCApzfdZ1LBeb5BIcN57eE8gihCOt08fKLqZmDOtpHPhOIBOIxwnUct12agBmL4EGkWBZAEzw6XDXjeMSLn+IPYobFG5sFphuxlwipqbbjgHfEeprzz3s9q+ZC9qORB2A2E/MljKTLySFuR95bs//SqYtmuMYwDp43+WL4Jnwn11bp9UfU4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;save_response_file&quot;
+        title=&quot;save_response_file&quot;
+        src=&quot;/static/a06d1f5497e82ccb428aa0f3ff253794/f570d/save_response_file.png&quot;
+        srcset=&quot;/static/a06d1f5497e82ccb428aa0f3ff253794/0783d/save_response_file.png 240w,
+/static/a06d1f5497e82ccb428aa0f3ff253794/782f4/save_response_file.png 480w,
+/static/a06d1f5497e82ccb428aa0f3ff253794/f570d/save_response_file.png 960w,
+/static/a06d1f5497e82ccb428aa0f3ff253794/8d0ff/save_response_file.png 1440w,
+/static/a06d1f5497e82ccb428aa0f3ff253794/d654f/save_response_file.png 1508w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[aws ec2 with rds]]></title><description><![CDATA[aws ec2 with rds]]></description><link>https://evergreen-david.github.io.git//posts/aws-ec2-rds</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-ec2-rds</guid><pubDate>Sun, 05 Jan 2020 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-aws-사용법&quot;&gt;&lt;a href=&quot;#1-aws-%EC%82%AC%EC%9A%A9%EB%B2%95&quot; aria-label=&quot;1 aws 사용법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. AWS 사용법&lt;/h1&gt;
 &lt;p&gt;EC2 실행중인 인스턴스로 가서 IPv4 퍼블릭 IP를 확인한다.
 ssh를 통해 접속하는 방법은 EC2 인스턴스를 만들때 발급받은 key를 가지고 ssh로 접속한다.
 접속 방법은 다음과 같다.&lt;br&gt;
