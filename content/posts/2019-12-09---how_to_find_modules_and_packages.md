@@ -7,8 +7,7 @@ slug: "/posts/modules-packages"
 category: "terminal"
 description: "How import statement finds modules and packages"
 tags:
-  - "terminal"
-  - "linux"
+  - "python"
 ---
 
 # 1. sys.modules 와 sys.path 의 차이점

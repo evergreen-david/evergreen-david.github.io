@@ -7,8 +7,7 @@ slug: "/posts/first-project-in-wecode"
 category: "terminal"
 description: "first project in wecode"
 tags:
-  - "terminal"
-  - "linux"
+  - "project"
 ---
 
 # 1. 프로젝트 내용

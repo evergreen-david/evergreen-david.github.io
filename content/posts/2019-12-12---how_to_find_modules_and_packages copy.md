@@ -7,8 +7,7 @@ slug: "/posts/javascript-closure"
 category: "terminal"
 description: "difference between var and let"
 tags:
-  - "terminal"
-  - "linux"
+  - "javascript"
 ---
 
 # 1. It is a popular and typical closure question

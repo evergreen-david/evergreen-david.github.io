@@ -7,8 +7,8 @@ slug: "/posts/study-python-queryset"
 category: "terminal"
 description: "python queryset"
 tags:
-  - "terminal"
-  - "linux"
+  - "python"
+  - "django"
 ---
 
 # 1. QUERY SET 이란

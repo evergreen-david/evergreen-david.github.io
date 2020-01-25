@@ -7,8 +7,8 @@ slug: "/posts/setup-django"
 category: "terminal"
 description: "setting up django"
 tags:
-  - "terminal"
-  - "linux"
+  - "django"
+  - "python"
 ---
 
 # 1. Make virtual environment

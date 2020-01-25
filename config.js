@@ -27,7 +27,7 @@ module.exports = {
   ],
   author: {
     name: 'evergreen-david',
-    photo: '/profile.png',
+    photo: '/my_gatsby_profile.png',
     bio: '',
     contacts: {
       email: 'leesangrok1118@gmail.com',

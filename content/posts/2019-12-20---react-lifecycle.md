@@ -7,8 +7,7 @@ slug: "/posts/react-lifecycle"
 category: "terminal"
 description: "react - lifecycle"
 tags:
-  - "terminal"
-  - "linux"
+  - "react"
 ---
 
 # 1. 라이프 싸이클 메서드

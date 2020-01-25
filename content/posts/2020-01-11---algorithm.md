@@ -7,8 +7,7 @@ slug: "/posts/algorithm-for-sorting"
 category: "terminal"
 description: "algorithm for sorting"
 tags:
-  - "terminal"
-  - "linux"
+  - "algorithm"
 ---
 
 # 1. 선택 정렬
