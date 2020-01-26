@@ -4,7 +4,7 @@ date: "2020-01-25T01:04:59"
 template: "post"
 draft: false
 slug: "/posts/aws-html-deployment"
-category: "terminal"
+category: "aws"
 description: "aws html file deployment"
 tags:
   - "aws"

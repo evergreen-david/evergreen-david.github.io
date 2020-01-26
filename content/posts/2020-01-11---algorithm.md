@@ -4,7 +4,7 @@ date: "2020-01-12T18:24:17"
 template: "post"
 draft: false
 slug: "/posts/algorithm-for-sorting"
-category: "terminal"
+category: "algorithm"
 description: "algorithm for sorting"
 tags:
   - "algorithm"

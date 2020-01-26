@@ -4,7 +4,7 @@ date: "2020-01-04T18:24:17"
 template: "post"
 draft: false
 slug: "/posts/first-project-in-wecode"
-category: "terminal"
+category: "project-review"
 description: "first project in wecode"
 tags:
   - "project"
