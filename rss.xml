@@ -1,4 +1,654 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 25 Jan 2020 17:21:03 GMT</lastBuildDate><item><title><![CDATA[aws html file deployment]]></title><description><![CDATA[aws html file deployment]]></description><link>https://evergreen-david.github.io.git//posts/aws-html-deployment</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-html-deployment</guid><pubDate>Sat, 25 Jan 2020 06:04:59 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-deployment-html-file-to-aws-s3&quot;&gt;&lt;a href=&quot;#1-deployment-html-file-to-aws-s3&quot; aria-label=&quot;1 deployment html file to aws s3 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Deployment html file to AWS S3&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Jan 2020 04:49:44 GMT</lastBuildDate><item><title><![CDATA[aws lambda get]]></title><description><![CDATA[aws lambda get]]></description><link>https://evergreen-david.github.io.git//posts/aws-lambda-get</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-lambda-get</guid><pubDate>Sat, 25 Jan 2020 17:54:18 GMT</pubDate><content:encoded>&lt;p&gt;What is AWS Lambda ?
+&lt;a href=&quot;https://aws.amazon.com/lambda/&quot;&gt;https://aws.amazon.com/lambda/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-create-users-table-from-dynamo-db&quot;&gt;&lt;a href=&quot;#1-create-users-table-from-dynamo-db&quot; aria-label=&quot;1 create users table from dynamo db permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Create users table from dynamo db&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2e7a9791d654a81f4300d3bb97a498a0/1be3f/db_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.49921507064364%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAA/ElEQVQoz4VQ0U7DMAzM/38O8DBYabc1dDAQSPA0IU3iAbEhBHSoSdvEPpy2YxF7mKWLZefuHEdN9ZzGWb5Ksnx5nkyeT85Gy9PR5YueL6CLBeSe8+IGM32NZHKFJNOSNdJpgYs057HUdw9P69v7x80s1VD4F845gBnee2YixvGIOaxIRBQOkTvXkjUVbcuS6tqibWq4tmUBhNRruYfQQw4xpDCfoIZGR/byoK11eH3/7PBRVqgaD9MSrOMD1AIatDufbuXeEGgc4e3L4Nu4zjggGO4QGwez0nrJhNhDDVXUPIb9t/3IQCODDg2jBuPvm3rEdoxhtT0/1ob4BY0iGwTlCEXxAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;db&quot;
+        title=&quot;db&quot;
+        src=&quot;/static/2e7a9791d654a81f4300d3bb97a498a0/f570d/db_1.png&quot;
+        srcset=&quot;/static/2e7a9791d654a81f4300d3bb97a498a0/0783d/db_1.png 240w,
+/static/2e7a9791d654a81f4300d3bb97a498a0/782f4/db_1.png 480w,
+/static/2e7a9791d654a81f4300d3bb97a498a0/f570d/db_1.png 960w,
+/static/2e7a9791d654a81f4300d3bb97a498a0/8d0ff/db_1.png 1440w,
+/static/2e7a9791d654a81f4300d3bb97a498a0/a987b/db_1.png 1920w,
+/static/2e7a9791d654a81f4300d3bb97a498a0/1be3f/db_1.png 2548w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;put data to the table for testing later like this&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/515677bbd0eb8cbf4903a6d78d365737/6de9f/db_2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 21.754523996852875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAA0klEQVQY05XM30vCYBjF8f39qW1E5SBDa7m3i+gqKOtGtjlqidNtNqm7IPpFVyWKsufrO+km7zrw4YHzwDG6Xo+zq4DLmy5eeE8YxfTjhHiUrQ2GCel4QpLljLIJaf5I+vArfxKNt4+vl9f3z+e7/hADne/pnOVywe1gjDq/IAx8fN8j7AVcdzo4zjHtEwfltjlV7iZR+irXpdE4EKMoCn5mi3KXKIo4ajX145C6bbNft9nZ3aNS3aZS06o1tv6SsjdNU7TCsiwMEVmPlcObEf6fFYbTDjmJbaYCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;db2&quot;
+        title=&quot;db2&quot;
+        src=&quot;/static/515677bbd0eb8cbf4903a6d78d365737/f570d/db_2.png&quot;
+        srcset=&quot;/static/515677bbd0eb8cbf4903a6d78d365737/0783d/db_2.png 240w,
+/static/515677bbd0eb8cbf4903a6d78d365737/782f4/db_2.png 480w,
+/static/515677bbd0eb8cbf4903a6d78d365737/f570d/db_2.png 960w,
+/static/515677bbd0eb8cbf4903a6d78d365737/8d0ff/db_2.png 1440w,
+/static/515677bbd0eb8cbf4903a6d78d365737/a987b/db_2.png 1920w,
+/static/515677bbd0eb8cbf4903a6d78d365737/6de9f/db_2.png 2542w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/1be3f/db_3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 25.510204081632654%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAA0UlEQVQY063Mv0vDUBTF8fz/axJoGkya6OakkMHBpohoS4dXJWl4mFJBiiKIi7+Ieffbl1RBXPXAh3PvcpyL6Yzj0ykn43Mu5wvmquCqqCgqTWkVZYW+WVHpmqVeoeu1/b/Ua9H1LZv7x+e7zcOTui5xQHh5++CzaZgtlhwcHnE2ycnzMRPbWZYRRXvEcUQyGpEmyW+Sprs7GAzEMcbw+t7QRSnFfpoyHIYEQWBHYsIwxPO8nut23J9k1550fN/HEZF+TMTwH+kHv7Vti7HaP9gC+5deldUc0WcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;db3&quot;
+        title=&quot;db3&quot;
+        src=&quot;/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/f570d/db_3.png&quot;
+        srcset=&quot;/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/0783d/db_3.png 240w,
+/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/782f4/db_3.png 480w,
+/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/f570d/db_3.png 960w,
+/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/8d0ff/db_3.png 1440w,
+/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/a987b/db_3.png 1920w,
+/static/5565ec11d8c5e41a3e6c5902e3dfa9c6/1be3f/db_3.png 2548w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-create-python-lambda-function-to-get-data-from-dynamodb&quot;&gt;&lt;a href=&quot;#2-create-python-lambda-function-to-get-data-from-dynamodb&quot; aria-label=&quot;2 create python lambda function to get data from dynamodb permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Create python lambda function to get data from dynamodb&lt;/h2&gt;
+&lt;p&gt;Function name : getusers&lt;br&gt;
+Runtime : Python 3.7&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/773b07a56813fd34f565e7ba6197199e/f52e0/1_create_function.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 38.080126933756446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABIElEQVQoz32R2U4DMQxF8/+fwwMSlC7TdjqoAokHvqB9QKq6MEuWyeKLkwlLW1FLR04c58Z2xN39CE/TBabFErNFhdm8xHSxwrJao1hWzArzssKE4w/jAo+TOUacn6Hoy+eX4/r17WNclBCb3RGHzqB1BBUARUi+VQZ93yNQgPc++W8zxkBrxXEHokD4NRJbFvxU/RX7UwMpVb7MmOGB6Oum5TMJpTVprTmnJ2stSaUgmrpGDDpnEWIlGQpDZY7xGeeGfYhnTLggPiiaTqZEn5O8D1ng+sIll+acg9jvD6jrJrVmejuIZ0Ei+pc0sL97xlqu8HA8IfZurTtr75ZYJFX48x3Dgv8Vom67JHiGHLy6QTrn2cf5K+5M7jbotu/4AtXDZmBmvWA9AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/773b07a56813fd34f565e7ba6197199e/f570d/1_create_function.png&quot;
+        srcset=&quot;/static/773b07a56813fd34f565e7ba6197199e/0783d/1_create_function.png 240w,
+/static/773b07a56813fd34f565e7ba6197199e/782f4/1_create_function.png 480w,
+/static/773b07a56813fd34f565e7ba6197199e/f570d/1_create_function.png 960w,
+/static/773b07a56813fd34f565e7ba6197199e/8d0ff/1_create_function.png 1440w,
+/static/773b07a56813fd34f565e7ba6197199e/a987b/1_create_function.png 1920w,
+/static/773b07a56813fd34f565e7ba6197199e/f52e0/1_create_function.png 2521w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;[Permissions] / Resource summary&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d708945b63ff0ab9dfd9843b6161de40/ab884/2_permissions.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40.03976143141153%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABJ0lEQVQoz4WRS07DMBiEc0sQC25A2ioFWjgA3bHhWSo23IM7cAIQQtCmTbDjxHacxINt5dGKSll8mv8Rj5OJd/UyQ/A4xuXzFNPFBBeGyeLc9WdPAYKHAcbzIU7nIwzufPg3J/BvWyrbH80O3o6vD19H90N4meAgJIbgKXIloVTuyHMJYXZCCDPvZkVZoChatO3NnggpqJ15ZBXhexki4QJM5LvIrqZcIqIMhFL8Euq0RrM0hcXWXvSxwvvnElSVSAsNpqr9uF2JhDHQJGnQW+pqj379IA7XKMsS0Bq6qoz8x+7sM42h1X14LIqxWW/AXVbK5JTvIGtcLWW/YWK+PTRvmGVZa9CoMhfYoFX9E+yFvYapMaIm3KTLBdQdYi5ozjmyLfoM/wANjE66bh0DbQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/d708945b63ff0ab9dfd9843b6161de40/f570d/2_permissions.png&quot;
+        srcset=&quot;/static/d708945b63ff0ab9dfd9843b6161de40/0783d/2_permissions.png 240w,
+/static/d708945b63ff0ab9dfd9843b6161de40/782f4/2_permissions.png 480w,
+/static/d708945b63ff0ab9dfd9843b6161de40/f570d/2_permissions.png 960w,
+/static/d708945b63ff0ab9dfd9843b6161de40/8d0ff/2_permissions.png 1440w,
+/static/d708945b63ff0ab9dfd9843b6161de40/a987b/2_permissions.png 1920w,
+/static/d708945b63ff0ab9dfd9843b6161de40/ab884/2_permissions.png 2515w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;AWS Lambda Runtimes&lt;br&gt;
+&lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg//lambda-runtimes.html&quot;&gt;https://docs.aws.amazon.com/lambda/latest/dg//lambda-runtimes.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;AWS Lambda Limits
+&lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg//limits.html&quot;&gt;https://docs.aws.amazon.com/lambda/latest/dg//limits.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;AWS X-Ray
+&lt;a href=&quot;https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html&quot;&gt;https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/84ee81276c7e094b5058ff6f323c6913/ee47f/3_lambda_runtime.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.06779661016949%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABTElEQVQoz3VRy07DMBDMn0JVtUChqEhw5tALX1DRqkXA38V2EucdO49h102qtCqWRjOxvePZjTdbLHF7t8T0/hk30we8rz/wuf8hfGNLvD302B+xO/xis/vCfLHCZPaI6fwJE6p/e1lhs36Fl+YlhhUlGYIwglIBiqJEUVY9j3S/33WnMqcbYkvwQunDmgpVZSCDCHGWI6FHTN3QxY7Q9nyum6Y5Q9vS/baFF0URvVrAWgtfKPgqgh9oGFuPjEagIgfSLfE5OniS2iupJUsGgrQQEkIqaK2RZRmSJDkiTXumPe6CdJ4XMMZQd9ShsWg4oQpC1HXtEgak4zh2RgytY3fm0lwk5USXi/epZe1mwIZJkrpkPAJD3zGluFZ4aTKGx8Us2EBSqyHNlMHp2JDPrxUOGM5OCQfBhpxWKvoxQsD3hRsBz3ds+F/Kgf8A8tqkdZSVM0YAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/84ee81276c7e094b5058ff6f323c6913/f570d/3_lambda_runtime.png&quot;
+        srcset=&quot;/static/84ee81276c7e094b5058ff6f323c6913/0783d/3_lambda_runtime.png 240w,
+/static/84ee81276c7e094b5058ff6f323c6913/782f4/3_lambda_runtime.png 480w,
+/static/84ee81276c7e094b5058ff6f323c6913/f570d/3_lambda_runtime.png 960w,
+/static/84ee81276c7e094b5058ff6f323c6913/8d0ff/3_lambda_runtime.png 1440w,
+/static/84ee81276c7e094b5058ff6f323c6913/a987b/3_lambda_runtime.png 1920w,
+/static/84ee81276c7e094b5058ff6f323c6913/ee47f/3_lambda_runtime.png 2537w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;db access using boto3&lt;/p&gt;
+&lt;p&gt;boto3 documentation
+&lt;a href=&quot;https://boto3.amazonaws.com/v1/documentation/api/latest/index.html&quot;&gt;https://boto3.amazonaws.com/v1/documentation/api/latest/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[Available Services] -&gt; find “dynamo” / “table”
+&lt;a href=&quot;https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#table&quot;&gt;https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#table&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DynamoDB reference guide
+&lt;a href=&quot;https://boto3.amazonaws.com/v1/documentation/api/latest/reference/customizations/dynamodb.html#ref-valid-dynamodb-types&quot;&gt;https://boto3.amazonaws.com/v1/documentation/api/latest/reference/customizations/dynamodb.html#ref-valid-dynamodb-types&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The following query syntax is used for this test.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    IndexName=&amp;#39;string&amp;#39;,
+    Select=&amp;#39;ALL_ATTRIBUTES&amp;#39;|&amp;#39;ALL_PROJECTED_ATTRIBUTES&amp;#39;|&amp;#39;SPECIFIC_ATTRIBUTES&amp;#39;|&amp;#39;COUNT&amp;#39;,
+    AttributesToGet=[
+        &amp;#39;string&amp;#39;,
+    ],
+    Limit=123,
+    ConsistentRead=True|False,
+    KeyConditions={
+        &amp;#39;string&amp;#39;: {
+            &amp;#39;AttributeValueList&amp;#39;: [
+                &amp;#39;string&amp;#39;|123|Binary(b&amp;#39;bytes&amp;#39;)|True|None|set([&amp;#39;string&amp;#39;])|set([123])|set([Binary(b&amp;#39;bytes&amp;#39;)])|[]|{},
+            ],
+            &amp;#39;ComparisonOperator&amp;#39;: &amp;#39;EQ&amp;#39;|&amp;#39;NE&amp;#39;|&amp;#39;IN&amp;#39;|&amp;#39;LE&amp;#39;|&amp;#39;LT&amp;#39;|&amp;#39;GE&amp;#39;|&amp;#39;GT&amp;#39;|&amp;#39;BETWEEN&amp;#39;|&amp;#39;NOT_NULL&amp;#39;|&amp;#39;NULL&amp;#39;|&amp;#39;CONTAINS&amp;#39;|&amp;#39;NOT_CONTAINS&amp;#39;|&amp;#39;BEGINS_WITH&amp;#39;
+        }
+    },
+    QueryFilter={
+        &amp;#39;string&amp;#39;: {
+            &amp;#39;AttributeValueList&amp;#39;: [
+                &amp;#39;string&amp;#39;|123|Binary(b&amp;#39;bytes&amp;#39;)|True|None|set([&amp;#39;string&amp;#39;])|set([123])|set([Binary(b&amp;#39;bytes&amp;#39;)])|[]|{},
+            ],
+            &amp;#39;ComparisonOperator&amp;#39;: &amp;#39;EQ&amp;#39;|&amp;#39;NE&amp;#39;|&amp;#39;IN&amp;#39;|&amp;#39;LE&amp;#39;|&amp;#39;LT&amp;#39;|&amp;#39;GE&amp;#39;|&amp;#39;GT&amp;#39;|&amp;#39;BETWEEN&amp;#39;|&amp;#39;NOT_NULL&amp;#39;|&amp;#39;NULL&amp;#39;|&amp;#39;CONTAINS&amp;#39;|&amp;#39;NOT_CONTAINS&amp;#39;|&amp;#39;BEGINS_WITH&amp;#39;
+        }
+    },
+    ConditionalOperator=&amp;#39;AND&amp;#39;|&amp;#39;OR&amp;#39;,
+    ScanIndexForward=True|False,
+    ExclusiveStartKey={
+        &amp;#39;string&amp;#39;: &amp;#39;string&amp;#39;|123|Binary(b&amp;#39;bytes&amp;#39;)|True|None|set([&amp;#39;string&amp;#39;])|set([123])|set([Binary(b&amp;#39;bytes&amp;#39;)])|[]|{}
+    },
+    ReturnConsumedCapacity=&amp;#39;INDEXES&amp;#39;|&amp;#39;TOTAL&amp;#39;|&amp;#39;NONE&amp;#39;,
+    ProjectionExpression=&amp;#39;string&amp;#39;,
+    FilterExpression=Attr(&amp;#39;myattribute&amp;#39;).eq(&amp;#39;myvalue&amp;#39;),
+    KeyConditionExpression=Key(&amp;#39;mykey&amp;#39;).eq(&amp;#39;myvalue&amp;#39;),
+    ExpressionAttributeNames={
+        &amp;#39;string&amp;#39;: &amp;#39;string&amp;#39;
+    },
+    ExpressionAttributeValues={
+        &amp;#39;string&amp;#39;: &amp;#39;string&amp;#39;|123|Binary(b&amp;#39;bytes&amp;#39;)|True|None|set([&amp;#39;string&amp;#39;])|set([123])|set([Binary(b&amp;#39;bytes&amp;#39;)])|[]|{}
+    }
+)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Writing codes to get users from database&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a1d67a61e33a929cf45d4ecff2136999/9fb8a/4_code.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49.58620689655173%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABHUlEQVQoz5WS246DMAxE+f9P3GqlXYm2EBIuCYQ7U08oXSrRqvswijHxyD5OVBQlUpWh7XqM44hhGB7q+/7pe5/v5eT9fQ3jyFqLPM+ffkzTFFSW5aNwEDFelgVt20LnBaxz8BLzP+8PAw0leU0VkiSFMQZxfEGmM3jvUdf1SzmpYzM8Q65poLVeDb1v0UiCiq8GSmlUVgqcfzl2GPEARUT3vuswz3Mwjs9nnL5O+P79QZxdJLci2Hi9Uyc+wZABixjnRQWVGRmhlkW1gdd2buAPuz0y3Lhw64lKwBfQeEEhPInj34aMjZgY2SCXst/4J2MHhm5nyO5opkqNsrJ/b+5DEUvETrr7o+ZYztn7xr2w61aGb8RmeJ/NVFWFGxzVCNnt2C+YAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;4&quot;
+        title=&quot;4&quot;
+        src=&quot;/static/a1d67a61e33a929cf45d4ecff2136999/f570d/4_code.png&quot;
+        srcset=&quot;/static/a1d67a61e33a929cf45d4ecff2136999/0783d/4_code.png 240w,
+/static/a1d67a61e33a929cf45d4ecff2136999/782f4/4_code.png 480w,
+/static/a1d67a61e33a929cf45d4ecff2136999/f570d/4_code.png 960w,
+/static/a1d67a61e33a929cf45d4ecff2136999/8d0ff/4_code.png 1440w,
+/static/a1d67a61e33a929cf45d4ecff2136999/9fb8a/4_code.png 1450w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;3-writing-test-case&quot;&gt;&lt;a href=&quot;#3-writing-test-case&quot; aria-label=&quot;3 writing test case permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Writing Test case&lt;/h1&gt;
+&lt;p&gt;[Configure test event]&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db49bb0fc7addcb6179586abed9aa1b8/fb5c7/5_configure_test_events.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.86006289308176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABO0lEQVQoz5WRS0/DMBCE8/9/DQdK+kgfUC5cOHArQpyAA21Kkzix16697LhpFKpWFZE+rT22x7NOko6n/uZ29J6OZ6vBcPo6SLPV3WReZ4tHzubLkM0epIIlp9nilDCUOpre26fnl7dJtvCJ0YbDPvCfzwcOPoS93XPEeXbkGHubpuG6rrluOgJqo0WXtURrE8hYT4Y8afL2MBaNGNWS5YixMrdclhUXZXkk9GokgfCzK9g6y8451lqzMYbJiomgJA3AGFpZXTaUtZAoVYvhjtebnL/XG8YcbcEYxPYEjJVSnSFqn6OWoG8kQysfn19RtG066H2gVWJ61TC2JhuRsigL1ubQdt/oX4bYXMlkvc2lXd0d7kNE8ZLrhu0bIaFq3+oceNfq5PBZQ9yY59toRu2fRJpTkBIJrxn+AqUj+I+esgyaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;5&quot;
+        title=&quot;5&quot;
+        src=&quot;/static/db49bb0fc7addcb6179586abed9aa1b8/f570d/5_configure_test_events.png&quot;
+        srcset=&quot;/static/db49bb0fc7addcb6179586abed9aa1b8/0783d/5_configure_test_events.png 240w,
+/static/db49bb0fc7addcb6179586abed9aa1b8/782f4/5_configure_test_events.png 480w,
+/static/db49bb0fc7addcb6179586abed9aa1b8/f570d/5_configure_test_events.png 960w,
+/static/db49bb0fc7addcb6179586abed9aa1b8/8d0ff/5_configure_test_events.png 1440w,
+/static/db49bb0fc7addcb6179586abed9aa1b8/a987b/5_configure_test_events.png 1920w,
+/static/db49bb0fc7addcb6179586abed9aa1b8/fb5c7/5_configure_test_events.png 2544w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eedbbd47efa30183f5cfc658fc5dcd37/71109/6_test1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.13555992141454%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAA8ElEQVQoz42RzW7EIAyE8/7v16rnqofd5R9MAjTYtbNLlERV1cOniUdmsMmkjSWl9SfrO/MhKvVDabrdHyhY58g6T4bVWEfa2gGKr7QpN2XetNI4xZRwWQrV2nakBsjouNn7wF6l1toO5Ex8boAJgGqrFCHRtJkx9SspgUwjl2FHpHXttPa+qQSEGAU8aBedXsbxxh0fAitQnheaeerBCJSecX7U09H0l2CQVXjdE+UcODgFPhvGRM8G8RJr4YAjtX1T4jf8M/BqDvI8n35G47ASNKXoKWxvH/8XKNNtK/MkEppFGeDvcP+i6C0Hwq+BPyz4ZlKn3UfDAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;6&quot;
+        title=&quot;6&quot;
+        src=&quot;/static/eedbbd47efa30183f5cfc658fc5dcd37/f570d/6_test1.png&quot;
+        srcset=&quot;/static/eedbbd47efa30183f5cfc658fc5dcd37/0783d/6_test1.png 240w,
+/static/eedbbd47efa30183f5cfc658fc5dcd37/782f4/6_test1.png 480w,
+/static/eedbbd47efa30183f5cfc658fc5dcd37/f570d/6_test1.png 960w,
+/static/eedbbd47efa30183f5cfc658fc5dcd37/8d0ff/6_test1.png 1440w,
+/static/eedbbd47efa30183f5cfc658fc5dcd37/a987b/6_test1.png 1920w,
+/static/eedbbd47efa30183f5cfc658fc5dcd37/71109/6_test1.png 2545w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/630342b669a72fedf6778ad0c05085cf/44066/7_test2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35.68333989759748%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAA40lEQVQoz4WR2W7EIAxF8//fV6mPVR8qzbAlLAFMVLs2TCpmkebhyHBjX2NnMdaiNubLWPfBfEq8au1Zp8tVodKa3LrdWMm6lTiHjOvg5j1dtFHK2B+vLS0xRqoVqLWDABpBa5RzprRnlMLABcdx3BG4ZgJzKVSYkBIuIURkfh9ASdbG4epDb1JhIGcfwglOkX0CLefHs6OP4yxaSql37tQ6KJXmmsm835dX4kni0QGAV1I7ACO+yr0zjPwSETY/RLlL3L3j3cp+24DNpcFbw0dxwCOrbx4x/4+bc+GftT+ZzbV/3LAZPIZKfOAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;7&quot;
+        title=&quot;7&quot;
+        src=&quot;/static/630342b669a72fedf6778ad0c05085cf/f570d/7_test2.png&quot;
+        srcset=&quot;/static/630342b669a72fedf6778ad0c05085cf/0783d/7_test2.png 240w,
+/static/630342b669a72fedf6778ad0c05085cf/782f4/7_test2.png 480w,
+/static/630342b669a72fedf6778ad0c05085cf/f570d/7_test2.png 960w,
+/static/630342b669a72fedf6778ad0c05085cf/8d0ff/7_test2.png 1440w,
+/static/630342b669a72fedf6778ad0c05085cf/a987b/7_test2.png 1920w,
+/static/630342b669a72fedf6778ad0c05085cf/44066/7_test2.png 2539w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;run test
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eea9bca8e78dd9187a6a5a7474a42dd9/ccc27/8_debugging.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.848958333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAB90lEQVQoz42S+W6bQBDGef+36CE1je04JmnSPksj2cYHsFwLy7WA+foN1G6k/tEi/TTDzuyc69wtN/jwdY3PCxeLzQsWj8+4X21w7/7Aav2ML8tH3D1+x3LzhIenVyzd19m+drFyv2Hx4NL2gk+M8ZE4uAyIjh6aQqOrSqC3wKWf5dDNukgy1CUG+lyaamKoq+kMtpmhj9OYAvp8hPJ2SM8n6MBHEZyRK4WC5NS1f0apQtgsRZslN6xOb2ci6yiEY5nR8McPQkRRhCzLoHU+kWkNYwzqukbTNGjbFrbr0Pc9OkqhbS1tPLcWNs/gtKVBx9JVHGPveeSAs+9DqQhBGEIxSZIyoR9MSUWPkwSmLNEyyDiOuH5zQKkwUtAC20rYnsgy5aUknqjYQRYGiDkSsQtil3nKHKeZUlq27lgq8WGPjHNskgh1rNBxNmOZYzQzKDln/wTDoG0a3+wDF3nlQm4BNTPL0Ede/BsGrAyK0J+Qy9dEV58LdeFdhR4UkdZzVpGrYNq2pq4lEJNl/I9PR6SstOC8DRE/Ix0xSc/X8qdCDn6722O73eFwOCKicxgqhPJ0iuK2YUH05rf+Htn8tBR5Ng2fhsdAP9/e4HHLQRBMzyfhNruux/9+VjNgw4BVwlZZeiatkTyOJgrSFpwN22n/gfjUbPkXHx2HmKOs6gkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;8&quot;
+        title=&quot;8&quot;
+        src=&quot;/static/eea9bca8e78dd9187a6a5a7474a42dd9/f570d/8_debugging.png&quot;
+        srcset=&quot;/static/eea9bca8e78dd9187a6a5a7474a42dd9/0783d/8_debugging.png 240w,
+/static/eea9bca8e78dd9187a6a5a7474a42dd9/782f4/8_debugging.png 480w,
+/static/eea9bca8e78dd9187a6a5a7474a42dd9/f570d/8_debugging.png 960w,
+/static/eea9bca8e78dd9187a6a5a7474a42dd9/8d0ff/8_debugging.png 1440w,
+/static/eea9bca8e78dd9187a6a5a7474a42dd9/ccc27/8_debugging.png 1536w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;need debugging
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b0bac65284ac19d4e69b42950d222cb0/7aa09/9_debugging_code.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.830811554332875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABSUlEQVQoz3VSa4+DMAzj///BcWISuw0GY7wLpTwmX1zoBEj3wSJJUzex8V7ZG9qMmOcZ0zR9MfK7r0nseng2L8vhjou9qqq2ZC0s0rh8PqjrGmZcHyJI8pE6e/KiRNMqdH2/na/kPPee6QtJmqIoCjyiJ7Isg9YaXdcdoPaxUkLYohUw74W4kEeMMfD0MNiC1j2itED6yqRRoVW9bbAryqR7OQ7YzthjJ+QlBpzqEUW4XHz8XK8In79ompXUmAHD8D/Yw/uUyxIy4JRl1YAmcY1pPk7itDyDZnE6Eh8IqUtKLctS1m3tA04ffjkBwfwLuaNERxqb5/nq8n7C2+1mTSmFlC6zkV8H5u1mhiPdG/Wd0I3/fmcIggC+7yMMQ0SiKR+J4xj3+92eMWecJIl1nuuSyP5yNIUus7iuo60Wbr2z+OeVnSF7Df8AS/cEEQDDPEoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;9&quot;
+        title=&quot;9&quot;
+        src=&quot;/static/b0bac65284ac19d4e69b42950d222cb0/f570d/9_debugging_code.png&quot;
+        srcset=&quot;/static/b0bac65284ac19d4e69b42950d222cb0/0783d/9_debugging_code.png 240w,
+/static/b0bac65284ac19d4e69b42950d222cb0/782f4/9_debugging_code.png 480w,
+/static/b0bac65284ac19d4e69b42950d222cb0/f570d/9_debugging_code.png 960w,
+/static/b0bac65284ac19d4e69b42950d222cb0/8d0ff/9_debugging_code.png 1440w,
+/static/b0bac65284ac19d4e69b42950d222cb0/7aa09/9_debugging_code.png 1454w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/89d9876738472781a642f1bd2bbcee62/fd995/10_test_success_.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.8503937007874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABNklEQVQoz4WQvU7DMBSF856sbAgxsQBthVIEOwwwAypUDB14Dx6iKtAk/o+TOE5yuHYbMVbRp3N9knyynTys7nGzTHH3kSJ9n2JOXC8m1M0i6eIqdunbBLPXS0xfRi6G8N3Z08n2+PHo8/z59Ot2OUdiKwuhBJrWoeu7SE/4zsNR57sWrW/hex979BgZ6AlZDx6ybwcSAIksJbIii9La1agaorZwvomSKOx2Ql0rMMkhpASXIjBIraBLg5BCySFRVtFCkMjSj25PS0JHu25iun1XNgZKa2gTcwjzPiOhT5gq8MM34LaArBhUIyBrjm+2Qa62cR47Ydm/0OxyZOxJyLD+XSMXGTK+hSoFlJVxLQyHrjQkddaV8cgHhcoI5CxDzgswweg+6IXVMNbAVCbOoQtzuJ5Dwj9MDgKCz+8UgwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;10&quot;
+        title=&quot;10&quot;
+        src=&quot;/static/89d9876738472781a642f1bd2bbcee62/f570d/10_test_success_.png&quot;
+        srcset=&quot;/static/89d9876738472781a642f1bd2bbcee62/0783d/10_test_success_.png 240w,
+/static/89d9876738472781a642f1bd2bbcee62/782f4/10_test_success_.png 480w,
+/static/89d9876738472781a642f1bd2bbcee62/f570d/10_test_success_.png 960w,
+/static/89d9876738472781a642f1bd2bbcee62/8d0ff/10_test_success_.png 1440w,
+/static/89d9876738472781a642f1bd2bbcee62/a987b/10_test_success_.png 1920w,
+/static/89d9876738472781a642f1bd2bbcee62/fd995/10_test_success_.png 2540w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;print contest to see the content of LambdaContext object&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9a81ca60dd690f58f992092f99ca4c91/97243/11_print.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49.413388543823324%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABEUlEQVQoz42T2XaGIAyEef/n5D91o7KIiFuaiVqttcvFHAIxX8ioqrWWyqqmNGSaponGERpFmbWdbXvExx65eZ7P/J5TPgSyDL0WLssiDzvnTigL8bqulFKixrSE2r7vt0Y7XHnv6fVWUFGUZIwhrTWVZSmw1lkKXNR1nSjsq8Q+kOPaMx+lXgXpkqQTEhWPr/WLTMs3iP7bqFfdz3LOpADJwyBjBu7oA0Mbw7druTt3jlCUZlf4kz6BAwPhGca31vHINdVNw/sgDx263/AucG5ARzWbXbEXBwy5v5TStsK2L0AY7YMn495l9CffftLjyJG9QrzM/Nn84tWTUA+wguF4y6BHiXuG/m9U6KjDDwJ9AOM+CdM7HBraAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;11&quot;
+        title=&quot;11&quot;
+        src=&quot;/static/9a81ca60dd690f58f992092f99ca4c91/f570d/11_print.png&quot;
+        srcset=&quot;/static/9a81ca60dd690f58f992092f99ca4c91/0783d/11_print.png 240w,
+/static/9a81ca60dd690f58f992092f99ca4c91/782f4/11_print.png 480w,
+/static/9a81ca60dd690f58f992092f99ca4c91/f570d/11_print.png 960w,
+/static/9a81ca60dd690f58f992092f99ca4c91/8d0ff/11_print.png 1440w,
+/static/9a81ca60dd690f58f992092f99ca4c91/97243/11_print.png 1449w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e967e061529bc7745b94ef79d507c44b/8aae4/12_context.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.76762402088773%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAB/ElEQVQoz52T6W7TQBSF/TRQCdq0VGmiCiTehh8gkRSpz0pL49hZvMzuGTuxWzmHO5MoREX8wdKnucvojK/nOBpNP+DTj1t8vv+IMcXDb2e4nl5RPMD11zNcfR9gOBlgfHeB2/shbiYXGE3e42Z6jtHdJcaTcwynl3j35S3xBtHP7AGJTLCQcyz1HImKkcoZ1WZIfaxmgbl4wow9Iua/DjyF1dc9Cx1jZRISfHpAVmYoRYlSSdQbB/cKXzPOQBkFaSR0paGthtACqlKh57GuRlTqAmu2BjcMohKQFYd0ErI2lPN9bgVca9E814Q74U/uugrKSkRuY6GUhrUOXduh73tid6A/stvt/ol/XvpnaKcRbboGjl5Va4O2bfG/z15QISpkTmMJdP0W25cGGz9Gd8Ixd6EX+q/2+Frd2b3gki2wKFIUKkMmVih1DrNVqLY6rLYzYFWJNE/ATIGc9ulGhv4pfm8QXPMlcpmhauk7tuYvHAnyiiFexRCWwWzUUcS2p6IHwQWdnGYJWSaHH7+gNRdZiEtVhJv2DvA1D/e33ngHMDByiK5lGNcfHgSZpHHSRSCez4kEcTxHUZREASklGOMQQpIbyIdSYZ1lIed8X/c115BXyWpRqUqsi/WRVb7CMluSafkBAX8okyyYmCsefgJt1cHUe5NXjQm2+Q3MdGnCPJpj4AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;12&quot;
+        title=&quot;12&quot;
+        src=&quot;/static/e967e061529bc7745b94ef79d507c44b/f570d/12_context.png&quot;
+        srcset=&quot;/static/e967e061529bc7745b94ef79d507c44b/0783d/12_context.png 240w,
+/static/e967e061529bc7745b94ef79d507c44b/782f4/12_context.png 480w,
+/static/e967e061529bc7745b94ef79d507c44b/f570d/12_context.png 960w,
+/static/e967e061529bc7745b94ef79d507c44b/8d0ff/12_context.png 1440w,
+/static/e967e061529bc7745b94ef79d507c44b/8aae4/12_context.png 1532w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/645ce3a3c4b495fb607915a326b9d2fe/a0d55/13_os_environ.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 68.53503184713375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABqUlEQVQ4y61T7VKDMBDk/V/DHzo6Wi0tWp3RZ7FqK5YECB+B0Ha9O4hWRx1+yMyScHPZ7O0dwdnFFEfHZ5iEN4hu7xHOF5jOrhEuHjCn/SSMcHl9j1m0QBjdSt7kcobJ1RxXlMf7aXSHk/MQpxczBKDHtS2wx788QVlViOM3pLmBcx1aIm8IvFZ1jaZpZO/hnJM4w1r7JV6UJQJLBxKlUBQFeP+RRAlplqEeSK3t0XUd0jSD0ilyEsH5TdNKTkXiAg7wwTWpVCrB8nmN9WssREzA63fwGQ8fM8YIgrq2KEmq67jcBqtYY/n0gk2ioOgi13aiagxquiDgF0vdbrcim1U+Pi7x/LLCKnmFznPxh3Ho5U9gX4WwHAhZutYZ4o0ihRsY8ig3GUzRl8MX/ga2Rzw8JLS2RkZlKpUKITfKq2P8Va7vfk9IHnpCTR1MUuqgKSQ21j/GByFLlUDVKzSVQWZymcd+JAa0B/DfVC4L4mrKkksm1pQUKaWFuG0/S/QHxoBJDZGKQq01Muom3+Dnisk5cb/fj8JutxvGRoaykD/jx3Hg+Ai4wcN3yWYyLbDlWmsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;13&quot;
+        title=&quot;13&quot;
+        src=&quot;/static/645ce3a3c4b495fb607915a326b9d2fe/f570d/13_os_environ.png&quot;
+        srcset=&quot;/static/645ce3a3c4b495fb607915a326b9d2fe/0783d/13_os_environ.png 240w,
+/static/645ce3a3c4b495fb607915a326b9d2fe/782f4/13_os_environ.png 480w,
+/static/645ce3a3c4b495fb607915a326b9d2fe/f570d/13_os_environ.png 960w,
+/static/645ce3a3c4b495fb607915a326b9d2fe/8d0ff/13_os_environ.png 1440w,
+/static/645ce3a3c4b495fb607915a326b9d2fe/a0d55/13_os_environ.png 1570w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Cloud watch
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b6b3fac97aabf2c24e476d4fae32d75f/4c844/14_cloud_watch.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 78.59778597785979%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACOUlEQVQ4y2VT7ZKbMAzk/R+hP9pOO7lLLk3Smd70fUp6+SJ8BjDYmK1WEI5LPbMjI+S1tJaCT5+/Y7HaYb17xXK9Feyw3P3G6mWLheyfNq942fzEavsLT6sNFssfeJY4WsZ+e97g62KNLyOCOElQ1TWMqdFWBTrv4X0H3/sBsnddh9a2sM7q3nVuRKc+xgG9IvgT7nE4HkHiaxwjSVMkWTbYNFOk8p3mufqOpzPOUYTLNZb9CeHfN/Wl2RAb5EWB2+2GXA4QVVWhaRokcoFzTmFHWxujF2dymLFtK1lbi7IsURTCIVyB90z3fXnJvLUOXsqZL9dZLfNxWWtQNwbFbSTUW9oGjVgnelghM63VLAf/8E81FDjJqKOObtAwLxLUdfVOSN3qqpRSayXREuUQ/VVZyINVKOU/fU6Ik/iqJTKOyVRmkIhkJA0Y+LgoQ+eG8vq+/+BnvNdO8NM/ajwRzg9w74lRV34zC6If/UokUElEAtV3Thgnqbzy8NJGXlEJREe+Jn18PfqZWSco5IVr6VvqSlKF7CdCNnU9gmIzE9pam9188JP0fvAR/5Wsoo+6zVtp7p+XRjvH9MqNtEgrad+btJNe89KMxjSa4aDVe6s8Zjgn0ww5euF+j0t0RSbdzxGijaRthlGU72zwz0keM5syfDsccDpfEMls6syOc5wKOGK0HEP6eNE1TsbZLqZ44n5BcD6fEYahNmskQ8/D3Ke54GaQlS1KY3XGlViQjhfGUgFnmjN+J/wHaBLGevHvqp4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;14&quot;
+        title=&quot;14&quot;
+        src=&quot;/static/b6b3fac97aabf2c24e476d4fae32d75f/f570d/14_cloud_watch.png&quot;
+        srcset=&quot;/static/b6b3fac97aabf2c24e476d4fae32d75f/0783d/14_cloud_watch.png 240w,
+/static/b6b3fac97aabf2c24e476d4fae32d75f/782f4/14_cloud_watch.png 480w,
+/static/b6b3fac97aabf2c24e476d4fae32d75f/f570d/14_cloud_watch.png 960w,
+/static/b6b3fac97aabf2c24e476d4fae32d75f/8d0ff/14_cloud_watch.png 1440w,
+/static/b6b3fac97aabf2c24e476d4fae32d75f/4c844/14_cloud_watch.png 1626w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6f05c1f99d199fa8baf59d9e5d59feab/023bc/15_cloud_watch_.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 28.94219425874951%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABO0lEQVQY002PXU/CMBiF9/9/il+JMhWBQQC94M4byTZjTFzIBmvXtevYd4/vBkQvnpzT97Snea3Ry/L7xnbc69HMu7Mn3tX92Lu1p549WXqj8dy1J4vPsbNuH2crPDlr8+y8gjB/rLF5337NVxs1dd5g1QBUBeQN0PvaAJU5+QYnPZIpWphL9p8+Lzq60wKyaIylVNrFh7BL+IGIB9KUd5kSRNopKTqRxIbmSNPEKJlAysTIs6e8TgU/Ut4wFsPSuQZjDGEYYrfbYb+PhjPnfEAIgSRJIFJBRRJKKUKas1ZlWSzqunrQOgtIYTHBhge+72O7/YDrugiCgIr3iKJogHM2lGVZdsGcVHVa65D4IeJ+ZtEPKMsctAIVM1qLQ2s1kBNZJgfyPKN7R1RVQRwN0XvTtlVgusbvtc9+ActDvHY5p18xAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;15&quot;
+        title=&quot;15&quot;
+        src=&quot;/static/6f05c1f99d199fa8baf59d9e5d59feab/f570d/15_cloud_watch_.png&quot;
+        srcset=&quot;/static/6f05c1f99d199fa8baf59d9e5d59feab/0783d/15_cloud_watch_.png 240w,
+/static/6f05c1f99d199fa8baf59d9e5d59feab/782f4/15_cloud_watch_.png 480w,
+/static/6f05c1f99d199fa8baf59d9e5d59feab/f570d/15_cloud_watch_.png 960w,
+/static/6f05c1f99d199fa8baf59d9e5d59feab/8d0ff/15_cloud_watch_.png 1440w,
+/static/6f05c1f99d199fa8baf59d9e5d59feab/a987b/15_cloud_watch_.png 1920w,
+/static/6f05c1f99d199fa8baf59d9e5d59feab/023bc/15_cloud_watch_.png 2543w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Test 2 succeed
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c6f76281233007073dab035f79dd0b5a/ace41/17_test2_success.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.15006468305304%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAB+UlEQVQoz6WS204bMRCG8zRIDYE0UVRehouWFiV9U0gplLY3IAKBPdm7Pqy9pyRq8nfsJYmqqldd6dM/npmd/W1v52TyDieTEwwnAxyfHaJ/1kV/PMTw4yF6H97g6HyAwXkPI6qPPg8xoPzbTz0Mx33KH2E0Pkb3fRcHpweezvT5ArfxNb5FU/xgV7hNrvA9nrbq+eLjm/AS18EFbqJLH++Veqn/J//q6dzPHpAJQUjktkDT1KhrovkTYy1yY7xuUVrDkhZlSVRoyiU6kQiRiBhcM6Q5hzApRKEI2cYmgyolyqX9m1Xxqha6klBGo1M1JZTS0PS11WqF9Xq959c+3mw2/8Q95aKANrkbWMHk1m/zf57dwDiLwASDshK2NrSFAtWqRLVsqSkuGutrTt2Lvr7F95CpWtMZ08B58oRERsgMB9MJZJHBNFRsFPJawS5yBPwFYRrQGTNklu/qxqPbNfXm1pBDuhQ3xB1sCzlZtthl7tdMJR73YkE595Fdz6Jd7wY+hjME7AVMJohF5G/cHYNTl0s1R5SGCHngNTWCyHzNoehvMI0bSC4tbTmKI8weHjGfP3u9u7vHbPaEMIgQRwk4T8ESjpRnkEL5nKspqZCmGbJMwBjaWfN6KUzF3s0W74Jc6VJ5nANpaZgVyCvtY5fboh2ur5Te4W+qDGVAg3tLFwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;17&quot;
+        title=&quot;17&quot;
+        src=&quot;/static/c6f76281233007073dab035f79dd0b5a/f570d/17_test2_success.png&quot;
+        srcset=&quot;/static/c6f76281233007073dab035f79dd0b5a/0783d/17_test2_success.png 240w,
+/static/c6f76281233007073dab035f79dd0b5a/782f4/17_test2_success.png 480w,
+/static/c6f76281233007073dab035f79dd0b5a/f570d/17_test2_success.png 960w,
+/static/c6f76281233007073dab035f79dd0b5a/8d0ff/17_test2_success.png 1440w,
+/static/c6f76281233007073dab035f79dd0b5a/ace41/17_test2_success.png 1546w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In summary, a get function using AWS lambda was made in Python 3.7 runtime environment.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[aws html file deployment]]></title><description><![CDATA[aws html file deployment]]></description><link>https://evergreen-david.github.io.git//posts/aws-html-deployment</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-html-deployment</guid><pubDate>Sat, 25 Jan 2020 06:04:59 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-deployment-html-file-to-aws-s3&quot;&gt;&lt;a href=&quot;#1-deployment-html-file-to-aws-s3&quot; aria-label=&quot;1 deployment html file to aws s3 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Deployment html file to AWS S3&lt;/h1&gt;
 &lt;p&gt;In this article, the configuration of AWS S3 and CloudFront will be shown.
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -1380,7 +2030,43 @@ find . -path &amp;quot;*/migrations/*.py&amp;quot; -not -name &amp;quot;__init__
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;참고 링크
-[velog]:(&lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&quot;&gt;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&lt;/a&gt;)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[react - lifecycle]]></title><description><![CDATA[react - lifecycle]]></description><link>https://evergreen-david.github.io.git//posts/react-lifecycle</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/react-lifecycle</guid><pubDate>Fri, 20 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-라이프-싸이클-메서드&quot;&gt;&lt;a href=&quot;#1-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%8B%B8%EC%9D%B4%ED%81%B4-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;1 라이프 싸이클 메서드 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 라이프 싸이클 메서드&lt;/h1&gt;
+[velog]:(&lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&quot;&gt;https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html&lt;/a&gt;)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[setting up django]]></title><description><![CDATA[setting up django]]></description><link>https://evergreen-david.github.io.git//posts/setup-django</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/setup-django</guid><pubDate>Fri, 20 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-make-virtual-environment&quot;&gt;&lt;a href=&quot;#1-make-virtual-environment&quot; aria-label=&quot;1 make virtual environment permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Make virtual environment&lt;/h1&gt;
+&lt;p&gt;conda 가상 환경 만듬
+&lt;code class=&quot;language-text&quot;&gt;conda create -n project python=3.7&lt;/code&gt;
+제대로 만들어 졌는지 확인하고 activate&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;conda env list
+conda activate project&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;2-install-django&quot;&gt;&lt;a href=&quot;#2-install-django&quot; aria-label=&quot;2 install django permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Install Django&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;pip install django
+django&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;admin startproject mysql_setting
+vi my_settings&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Database 를 mysql로 세팅한다.
+키정보도 생성해서 넣어줌&lt;/p&gt;
+&lt;h1 id=&quot;3-my-sql-setting&quot;&gt;&lt;a href=&quot;#3-my-sql-setting&quot; aria-label=&quot;3 my sql setting permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. My Sql setting&lt;/h1&gt;
+&lt;p&gt;기본적인 패키지들 설치해줌&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;pip install mysql&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;connector&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;python
+pip install bcrypt
+pip install pyjwt
+pip install django&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cors&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;headers
+pip install mysqlclient&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;4-tips&quot;&gt;&lt;a href=&quot;#4-tips&quot; aria-label=&quot;4 tips permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Tips&lt;/h1&gt;
+&lt;p&gt;설치된 패키지 확인
+&lt;code class=&quot;language-text&quot;&gt;pip freeze&lt;/code&gt;
+asgiref==3.2.3
+bcrypt==3.1.7
+certifi==2019.11.28
+cffi==1.13.2
+Django==3.0.1
+mysql-connector-python==8.0.18
+protobuf==3.11.1
+pycparser==2.19
+PyJWT==1.7.1
+pytz==2019.3
+six==1.13.0
+sqlparse==0.3.0&lt;/p&gt;
+&lt;p&gt;나중에 배포를 위해서 설치된 버전을 기록한다.
+&lt;code class=&quot;language-text&quot;&gt;pip freeze &amp;gt; requirements.txt&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pip install -r requirements.txt&lt;/code&gt; 로 나중에 설치 가능, 이렇게 장고를 위한 실행 패키지들과 환경을 맞춰줌&lt;/p&gt;</content:encoded></item><item><title><![CDATA[react - lifecycle]]></title><description><![CDATA[react - lifecycle]]></description><link>https://evergreen-david.github.io.git//posts/react-lifecycle</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/react-lifecycle</guid><pubDate>Fri, 20 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-라이프-싸이클-메서드&quot;&gt;&lt;a href=&quot;#1-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%8B%B8%EC%9D%B4%ED%81%B4-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;1 라이프 싸이클 메서드 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 라이프 싸이클 메서드&lt;/h1&gt;
 &lt;p&gt;라이프 싸이클 메서드는 클래스형 컴포넌트에만 사용할 수 있는데, 이게 바로 클래스형 컴포넌트를 사용하는 이유로 생각된다.&lt;/p&gt;
 &lt;h1 id=&quot;2-getderivedstatefromprops&quot;&gt;&lt;a href=&quot;#2-getderivedstatefromprops&quot; aria-label=&quot;2 getderivedstatefromprops permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. getDerivedStateFromProps&lt;/h1&gt;
 &lt;p&gt;props로 받아온 값을 state에 동기화 시킬때 사용&lt;/p&gt;
@@ -1497,43 +2183,7 @@ getSnapshotBeforeUpdate 함수 다음 호출되므로 이 함수로 부터 retur
 &lt;p&gt;참고&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;리액트를 다루는 기술, 김민준(VELOPERT)저&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[setting up django]]></title><description><![CDATA[setting up django]]></description><link>https://evergreen-david.github.io.git//posts/setup-django</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/setup-django</guid><pubDate>Fri, 20 Dec 2019 23:24:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-make-virtual-environment&quot;&gt;&lt;a href=&quot;#1-make-virtual-environment&quot; aria-label=&quot;1 make virtual environment permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Make virtual environment&lt;/h1&gt;
-&lt;p&gt;conda 가상 환경 만듬
-&lt;code class=&quot;language-text&quot;&gt;conda create -n project python=3.7&lt;/code&gt;
-제대로 만들어 졌는지 확인하고 activate&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;conda env list
-conda activate project&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;2-install-django&quot;&gt;&lt;a href=&quot;#2-install-django&quot; aria-label=&quot;2 install django permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Install Django&lt;/h1&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;pip install django
-django&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;admin startproject mysql_setting
-vi my_settings&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Database 를 mysql로 세팅한다.
-키정보도 생성해서 넣어줌&lt;/p&gt;
-&lt;h1 id=&quot;3-my-sql-setting&quot;&gt;&lt;a href=&quot;#3-my-sql-setting&quot; aria-label=&quot;3 my sql setting permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. My Sql setting&lt;/h1&gt;
-&lt;p&gt;기본적인 패키지들 설치해줌&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;pip install mysql&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;connector&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;python
-pip install bcrypt
-pip install pyjwt
-pip install django&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cors&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;headers
-pip install mysqlclient&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;4-tips&quot;&gt;&lt;a href=&quot;#4-tips&quot; aria-label=&quot;4 tips permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Tips&lt;/h1&gt;
-&lt;p&gt;설치된 패키지 확인
-&lt;code class=&quot;language-text&quot;&gt;pip freeze&lt;/code&gt;
-asgiref==3.2.3
-bcrypt==3.1.7
-certifi==2019.11.28
-cffi==1.13.2
-Django==3.0.1
-mysql-connector-python==8.0.18
-protobuf==3.11.1
-pycparser==2.19
-PyJWT==1.7.1
-pytz==2019.3
-six==1.13.0
-sqlparse==0.3.0&lt;/p&gt;
-&lt;p&gt;나중에 배포를 위해서 설치된 버전을 기록한다.
-&lt;code class=&quot;language-text&quot;&gt;pip freeze &amp;gt; requirements.txt&lt;/code&gt; &lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pip install -r requirements.txt&lt;/code&gt; 로 나중에 설치 가능, 이렇게 장고를 위한 실행 패키지들과 환경을 맞춰줌&lt;/p&gt;</content:encoded></item><item><title><![CDATA[java script closure, scope]]></title><description><![CDATA[difference between var and let]]></description><link>https://evergreen-david.github.io.git//posts/javascript-closure</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/javascript-closure</guid><pubDate>Thu, 12 Dec 2019 22:34:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-it-is-a-popular-and-typical-closure-question&quot;&gt;&lt;a href=&quot;#1-it-is-a-popular-and-typical-closure-question&quot; aria-label=&quot;1 it is a popular and typical closure question permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. It is a popular and typical closure question&lt;/h1&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[java script closure, scope]]></title><description><![CDATA[difference between var and let]]></description><link>https://evergreen-david.github.io.git//posts/javascript-closure</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/javascript-closure</guid><pubDate>Thu, 12 Dec 2019 22:34:17 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-it-is-a-popular-and-typical-closure-question&quot;&gt;&lt;a href=&quot;#1-it-is-a-popular-and-typical-closure-question&quot; aria-label=&quot;1 it is a popular and typical closure question permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. It is a popular and typical closure question&lt;/h1&gt;
 &lt;p&gt;let’s look at this code
 다음의 실행결과를 예측해보자..&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; arr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
