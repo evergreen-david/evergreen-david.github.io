@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Jan 2020 04:49:44 GMT</lastBuildDate><item><title><![CDATA[aws lambda get]]></title><description><![CDATA[aws lambda get]]></description><link>https://evergreen-david.github.io.git//posts/aws-lambda-get</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-lambda-get</guid><pubDate>Sat, 25 Jan 2020 17:54:18 GMT</pubDate><content:encoded>&lt;p&gt;What is AWS Lambda ?
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by david]]></title><description><![CDATA[hello world]]></description><link>https://evergreen-david.github.io.git/</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 Feb 2020 02:25:51 GMT</lastBuildDate><item><title><![CDATA[swagger-ui]]></title><description><![CDATA[swagger-ui]]></description><link>https://evergreen-david.github.io.git//posts/swagger-ui</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/swagger-ui</guid><pubDate>Mon, 03 Feb 2020 02:06:26 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-swagger-ui-로-api-정리가-필요한-이유&quot;&gt;&lt;a href=&quot;#1-swagger-ui-%EB%A1%9C-api-%EC%A0%95%EB%A6%AC%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 swagger ui 로 api 정리가 필요한 이유 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. swagger-ui 로 API 정리가 필요한 이유&lt;/h1&gt;
+&lt;p&gt;하기와 같이 포스트맨으로 API를 Documentation 하고 있었지만, 기업 협업을 할때 공동작업시 버전 관리가 안되는 문제가 있었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/bb31e/postman_api.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.981767180925665%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABxklEQVQoz11S246iUBDkc3a4CIKAES+Tjd+4P7Fv+wPzAYu+TTLJJrsCCg6ig4IO3k7tOS0YM51UqiGhqK5uaeu/YJsm2OUfYIyhKdE/QlRVVZjP50iSBPFigVkYIXz5ifDXD/z984Z/swBSHMcoyhJlWTIOZFnGzudzo0x8uVyon06ncByHjUYjNhgMBCC43yeG53mQ0ixFFEVYr9fCAas/Fq6oF7her/TO931mmiYEDMMQYDUTdF2HlG0yLJMluFNWlAXybR6maRrleY7dbkeuj8cj/YMLYjgcXsbjcfL8/J11u124rss40IAchkGI1WrF9uVejP55OBw+eZFLocQjuAuqqnpSVe21pRlXWZbBwWqGoig3wYCHybPDQ3b3/IRmMzLPkHleH72eR264Q3LZgBx+rN/55hbk8HQ6NfGxervEzVJ8f4KO02a22762TYOJzAxDJ771BqRNtqRT4IJ0Fl9P5mHL8H/7aOkK7J6KjqvBMFU+qkKjCmiadnMY87sSt1UUBb7Wg0OxZS7wDZ2eDMtRobVkPD3d8hNMGW6yd8yCgFzuD3tUpwpiIXwxqBdzF5xMJrBth9+iDcuy+PlYxA3E838DqVvFQuVNQgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;post_man&quot;
+        title=&quot;post_man&quot;
+        src=&quot;/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/f570d/postman_api.png&quot;
+        srcset=&quot;/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/0783d/postman_api.png 240w,
+/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/782f4/postman_api.png 480w,
+/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/f570d/postman_api.png 960w,
+/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/8d0ff/postman_api.png 1440w,
+/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/a987b/postman_api.png 1920w,
+/static/c9a2d69a26f6f2d4ea7fb772ac149cf7/bb31e/postman_api.png 2852w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;그래서 다음과 같이 간단하게 git에 올릴수 있는 swagger ui를 사용하여 git을 통한 변경관리 할 예정이다.
+라이센스도 MIT 라이센스라서 무료로 사용할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 960px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/af78f1c7e41a233ba41f5e8f72e2b246/7c87d/swagger_test.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.08726249120337%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABiklEQVQoz53Q3WvaUBjH8fMPr3ftfzCEXXRXHbJ6MRx7uZwd28UGytBqjLpOXRlDOzSaxARNNFHzouS7Y0q9WqndgQ8P53B4eH6PeJ57SiaT4fjkhCdHR2RfZil+K1KpVWhdNWl8b6TUVoN6s47aVG9rS6VSLVOq1qiWS7wrZDl98wzx6m2OfD7P+XmOs7MXXHy8QFEVLpVLlIZCXVJbda46TTrdNu3uj73OzzZdqX3d5kvtE4Xie8TEXmDaLo6zwJ17TKwp47GZGmo62sjEsm2ircchR3jLNXEc7202G7bbO9u07t6iMCYMAyn8pyAIpDVid4miaN/sPrfNHyYc18VfLkmS5J4QCY85YjZ1031NZw6+v8TzfBaLHY/VSq4jitMEDwqjNLoo/3Go9S00w2ZozhhZDvZ8lZp6a2Z+cLCpFyA+jMZ81UYMJjY9y6Yv60BOa8hpDTmtfqC7v6LXv6bX/yVj6xiGga7rWNZERp5L7qOJ5PNrwlKBmTZgfvMbV1oOb9iYGvF/+AtUzjGSQJQWKwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;post_man&quot;
+        title=&quot;post_man&quot;
+        src=&quot;/static/af78f1c7e41a233ba41f5e8f72e2b246/f570d/swagger_test.png&quot;
+        srcset=&quot;/static/af78f1c7e41a233ba41f5e8f72e2b246/0783d/swagger_test.png 240w,
+/static/af78f1c7e41a233ba41f5e8f72e2b246/782f4/swagger_test.png 480w,
+/static/af78f1c7e41a233ba41f5e8f72e2b246/f570d/swagger_test.png 960w,
+/static/af78f1c7e41a233ba41f5e8f72e2b246/8d0ff/swagger_test.png 1440w,
+/static/af78f1c7e41a233ba41f5e8f72e2b246/a987b/swagger_test.png 1920w,
+/static/af78f1c7e41a233ba41f5e8f72e2b246/7c87d/swagger_test.png 2842w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;참고 영상&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?reload=9&amp;#x26;v=iZ2Tah3IxQc&quot;&gt;https://www.youtube.com/watch?reload=9&amp;#x26;v=iZ2Tah3IxQc&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[unit test]]></title><description><![CDATA[unit-test]]></description><link>https://evergreen-david.github.io.git//posts/unit-test</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/unit-test</guid><pubDate>Sun, 02 Feb 2020 02:06:26 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-ui-testingend-to-end-testing&quot;&gt;&lt;a href=&quot;#1-ui-testingend-to-end-testing&quot; aria-label=&quot;1 ui testingend to end testing permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. UI Testing/End-To-End Testing&lt;/h1&gt;
+&lt;p&gt;백엔드 프론트엔드 데이터베이스 모든 시스템 연결해서 테스트
+가장하기가 쉽고 직관적이지만, 비용이 비쌈
+프론트/백 준배포 하고 테스트 하므로
+사람이 눈으로 보고 테스트 하므로&lt;/p&gt;
+&lt;h1 id=&quot;2-integration-testing&quot;&gt;&lt;a href=&quot;#2-integration-testing&quot; aria-label=&quot;2 integration testing permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Integration Testing&lt;/h1&gt;
+&lt;p&gt;백엔드 서버만 띄우고
+Postman으로 Get해서 제대로 리턴 값이 오는지
+프론트엔드는 목 데이터로 테스트&lt;/p&gt;
+&lt;h1 id=&quot;3-unit-testing&quot;&gt;&lt;a href=&quot;#3-unit-testing&quot; aria-label=&quot;3 unit testing permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Unit Testing&lt;/h1&gt;
+&lt;p&gt;테스트할수 있는 가장 작은 단위
+코드를 테스트 하는것
+가장 작은 단위 , 함수 테스트
+코드로 코드를 테스트
+내코드를 테스트하는 코드를 짜는 것
+새로추가된 것만 테스트 하다보니깐
+이전 기능에서 버그 발생
+-&gt; 테스트 안하므로 버그 생김
+테스트 자동화가 필요하고 테스트 속도 빨라야함
+프론트엔드의 잘못인지 백엔드의 잘못인지 빨리 구분이 필요
+지금당장은 간단할수 있지만, 추후 내가짠 코드를 남이 수정할 수도 있기 때문에 Migration 이슈가 발생할 수도 있고 잘 정리 해야함&lt;/p&gt;
+&lt;h1 id=&quot;4테스트-원칙&quot;&gt;&lt;a href=&quot;#4%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;4테스트 원칙 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.테스트 원칙&lt;/h1&gt;
+&lt;p&gt;stateless 여야함, 독립적이어야함
+매개변수 추가되면 유닛테스트 추가해야함
+Test Coverage 가 100%가 되어야함
+최소 90% 이상은 되어야 함&lt;/p&gt;</content:encoded></item><item><title><![CDATA[aws lambda get]]></title><description><![CDATA[aws lambda get]]></description><link>https://evergreen-david.github.io.git//posts/aws-lambda-get</link><guid isPermaLink="false">https://evergreen-david.github.io.git//posts/aws-lambda-get</guid><pubDate>Sat, 25 Jan 2020 17:54:18 GMT</pubDate><content:encoded>&lt;p&gt;What is AWS Lambda ?
 &lt;a href=&quot;https://aws.amazon.com/lambda/&quot;&gt;https://aws.amazon.com/lambda/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-create-users-table-from-dynamo-db&quot;&gt;&lt;a href=&quot;#1-create-users-table-from-dynamo-db&quot; aria-label=&quot;1 create users table from dynamo db permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Create users table from dynamo db&lt;/h2&gt;
 &lt;p&gt;&lt;span
