@@ -99,14 +99,6 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/react-lifecycle
-  Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
-  Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
-  Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
-  Link: </app-6d3c58cf09573d14e4fe.js>; rel=preload; as=script
-  Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
-  Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
-  Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
 /posts/modules-packages
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
@@ -123,7 +115,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/setup-django
+/posts/study-python-queryset
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -139,7 +131,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/study-python-queryset
+/posts/react-lifecycle
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -147,7 +139,15 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/aws-ec2-rds
+/posts/setup-django
+  Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
+  Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
+  Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
+  Link: </app-6d3c58cf09573d14e4fe.js>; rel=preload; as=script
+  Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
+  Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
+  Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
+/posts/algorithm-for-sorting
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -163,7 +163,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/aws-lambda-get
+/posts/postman-team-development
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -171,7 +171,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/postman-team-development
+/posts/aws-ec2-rds
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -187,7 +187,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/algorithm-for-sorting
+/posts/aws-lambda-get
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -211,7 +211,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/python-practice
+/posts/python-list-comprehension
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
@@ -219,7 +219,7 @@
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
   Link: </component---src-templates-post-template-js-fbbb830db1c2cc3920a2.js>; rel=preload; as=script
-/posts/python-list-comprehension
+/posts/python-practice
   Link: </webpack-runtime-e54f9b686d6002c57923.js>; rel=preload; as=script
   Link: </styles-cad9bf75f8994da31389.js>; rel=preload; as=script
   Link: </commons-fbf3c12efc8f586b28eb.js>; rel=preload; as=script
